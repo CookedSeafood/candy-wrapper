@@ -15,7 +15,7 @@ public abstract class ItemEnchantmentsComponentMixin implements ItemEnchantments
     public int getLevel(String enchantment) {
 		Optional<RegistryEntry<Enchantment>> matchedEnchantment = this.getEnchantments()
 			.stream()
-			.filter(weaponEnchantment -> weaponEnchantment.getIdAsString().equals(enchantment))
+			.filter(presentedEnchantment -> presentedEnchantment.getIdAsString().equals(enchantment))
 			.findFirst();
         if (matchedEnchantment.isPresent()) {
 			return this.getLevel(matchedEnchantment.get());
