@@ -1,69 +1,5 @@
 accessWidener v2 named
 
-accessible method net/minecraft/entity/decoration/ArmorStandEntity setMarker (Z)V
-
-accessible method net/minecraft/entity/decoration/ArmorStandEntity setSmall (Z)V
-
-accessible method net/minecraft/entity/decoration/DisplayEntity getBillboardMode ()Lnet/minecraft/entity/decoration/DisplayEntity$BillboardMode;
-
-accessible method net/minecraft/entity/decoration/DisplayEntity setBillboardMode (Lnet/minecraft/entity/decoration/DisplayEntity$BillboardMode;)V
-
-accessible method net/minecraft/entity/decoration/DisplayEntity getBrightness ()I
-
-accessible method net/minecraft/entity/decoration/DisplayEntity getBrightnessUnpacked ()Lnet/minecraft/entity/decoration/Brightness;
-
-accessible method net/minecraft/entity/decoration/DisplayEntity setBrightness (Lnet/minecraft/entity/decoration/Brightness;)V
-
-accessible method net/minecraft/entity/decoration/DisplayEntity getViewRange ()F
-
-accessible method net/minecraft/entity/decoration/DisplayEntity setViewRange (F)V
-
-accessible method net/minecraft/entity/decoration/DisplayEntity getShadowRadius ()F
-
-accessible method net/minecraft/entity/decoration/DisplayEntity setShadowRadius (F)V
-
-accessible method net/minecraft/entity/decoration/DisplayEntity getShadowStrength ()F
-
-accessible method net/minecraft/entity/decoration/DisplayEntity setShadowStrength (F)V
-
-accessible method net/minecraft/entity/decoration/DisplayEntity getDisplayWidth ()F
-
-accessible method net/minecraft/entity/decoration/DisplayEntity setDisplayWidth (F)V
-
-accessible method net/minecraft/entity/decoration/DisplayEntity getDisplayHeight ()F
-
-accessible method net/minecraft/entity/decoration/DisplayEntity setDisplayHeight (F)V
-
-accessible method net/minecraft/entity/decoration/DisplayEntity getGlowColorOverride ()I
-
-accessible method net/minecraft/entity/decoration/DisplayEntity setGlowColorOverride (I)V
-
-accessible method net/minecraft/entity/decoration/DisplayEntity setTransformation (Lnet/minecraft/util/math/AffineTransformation;)V
-
-accessible method net/minecraft/entity/decoration/DisplayEntity$ItemDisplayEntity getItemStack ()Lnet/minecraft/item/ItemStack;
-
-accessible method net/minecraft/entity/decoration/DisplayEntity$ItemDisplayEntity setItemStack (Lnet/minecraft/item/ItemStack;)V
-
-accessible method net/minecraft/entity/decoration/DisplayEntity$TextDisplayEntity getText ()Lnet/minecraft/text/Text;
-
-accessible method net/minecraft/entity/decoration/DisplayEntity$TextDisplayEntity setText (Lnet/minecraft/text/Text;)V
-
-accessible method net/minecraft/entity/decoration/DisplayEntity$TextDisplayEntity getLineWidth ()I
-
-accessible method net/minecraft/entity/decoration/DisplayEntity$TextDisplayEntity setLineWidth (I)V
-
-accessible method net/minecraft/entity/decoration/DisplayEntity$TextDisplayEntity getTextOpacity ()B
-
-accessible method net/minecraft/entity/decoration/DisplayEntity$TextDisplayEntity setTextOpacity (B)V
-
-accessible method net/minecraft/entity/decoration/DisplayEntity$TextDisplayEntity getBackground ()I
-
-accessible method net/minecraft/entity/decoration/DisplayEntity$TextDisplayEntity setBackground (I)V
-
-accessible method net/minecraft/entity/decoration/DisplayEntity$TextDisplayEntity getDisplayFlags ()B
-
-accessible method net/minecraft/entity/decoration/DisplayEntity$TextDisplayEntity setDisplayFlags (B)V
-
 accessible method net/minecraft/entity/Entity addPassenger (Lnet/minecraft/entity/Entity;)V
 
 accessible method net/minecraft/entity/Entity removePassenger (Lnet/minecraft/entity/Entity;)V
@@ -71,3 +7,37 @@ accessible method net/minecraft/entity/Entity removePassenger (Lnet/minecraft/en
 accessible method net/minecraft/entity/Entity updatePassengerPosition (Lnet/minecraft/entity/Entity;Lnet/minecraft/entity/Entity$PositionUpdater;)V
 
 accessible method net/minecraft/entity/Entity couldAcceptPassenger ()Z
+
+accessible method net/minecraft/server/command/TeamCommand executeAdd (Lnet/minecraft/server/command/ServerCommandSource;Ljava/lang/String;)I
+
+accessible method net/minecraft/server/command/TeamCommand executeAdd (Lnet/minecraft/server/command/ServerCommandSource;Ljava/lang/String;Lnet/minecraft/text/Text;)I
+
+accessible method net/minecraft/server/command/TeamCommand executeRemove (Lnet/minecraft/server/command/ServerCommandSource;Lnet/minecraft/scoreboard/Team;)I
+
+accessible method net/minecraft/server/command/TeamCommand executeJoin (Lnet/minecraft/server/command/ServerCommandSource;Lnet/minecraft/scoreboard/Team;Ljava/util/Collection;)I
+
+accessible method net/minecraft/server/command/TeamCommand executeLeave (Lnet/minecraft/server/command/ServerCommandSource;Ljava/util/Collection;)I
+
+accessible method net/minecraft/server/command/TeamCommand executeEmpty (Lnet/minecraft/server/command/ServerCommandSource;Lnet/minecraft/scoreboard/Team;)I
+
+accessible method net/minecraft/server/command/TeamCommand executeListTeams (Lnet/minecraft/server/command/ServerCommandSource;)I
+
+accessible method net/minecraft/server/command/TeamCommand executeListMembers (Lnet/minecraft/server/command/ServerCommandSource;Lnet/minecraft/scoreboard/Team;)I
+
+accessible method net/minecraft/server/command/TeamCommand executeModifyColor (Lnet/minecraft/server/command/ServerCommandSource;Lnet/minecraft/scoreboard/Team;Lnet/minecraft/util/Formatting;)I
+
+accessible method net/minecraft/server/command/TeamCommand executeModifyPrefix (Lnet/minecraft/server/command/ServerCommandSource;Lnet/minecraft/scoreboard/Team;Lnet/minecraft/text/Text;)I
+
+accessible method net/minecraft/server/command/TeamCommand executeModifySuffix (Lnet/minecraft/server/command/ServerCommandSource;Lnet/minecraft/scoreboard/Team;Lnet/minecraft/text/Text;)I
+
+accessible method net/minecraft/server/command/TeamCommand executeModifyDisplayName (Lnet/minecraft/server/command/ServerCommandSource;Lnet/minecraft/scoreboard/Team;Lnet/minecraft/text/Text;)I
+
+accessible method net/minecraft/server/command/TeamCommand executeModifyFriendlyFire (Lnet/minecraft/server/command/ServerCommandSource;Lnet/minecraft/scoreboard/Team;Z)I
+
+accessible method net/minecraft/server/command/TeamCommand executeModifyCollisionRule (Lnet/minecraft/server/command/ServerCommandSource;Lnet/minecraft/scoreboard/Team;Lnet/minecraft/scoreboard/AbstractTeam$CollisionRule;)I
+
+accessible method net/minecraft/server/command/TeamCommand executeModifyNametagVisibility (Lnet/minecraft/server/command/ServerCommandSource;Lnet/minecraft/scoreboard/Team;Lnet/minecraft/scoreboard/AbstractTeam$VisibilityRule;)I
+
+accessible method net/minecraft/server/command/TeamCommand executeModifySeeFriendlyInvisibles (Lnet/minecraft/server/command/ServerCommandSource;Lnet/minecraft/scoreboard/Team;Z)I
+
+accessible method net/minecraft/server/command/TeamCommand executeModifyDeathMessageVisibility (Lnet/minecraft/server/command/ServerCommandSource;Lnet/minecraft/scoreboard/Team;Lnet/minecraft/scoreboard/AbstractTeam$VisibilityRule;)I
