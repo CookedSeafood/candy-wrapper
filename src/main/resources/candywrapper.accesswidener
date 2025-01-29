@@ -7,37 +7,3 @@ accessible method net/minecraft/entity/Entity removePassenger (Lnet/minecraft/en
 accessible method net/minecraft/entity/Entity updatePassengerPosition (Lnet/minecraft/entity/Entity;Lnet/minecraft/entity/Entity$PositionUpdater;)V
 
 accessible method net/minecraft/entity/Entity couldAcceptPassenger ()Z
-
-accessible method net/minecraft/server/command/TeamCommand executeAdd (Lnet/minecraft/server/command/ServerCommandSource;Ljava/lang/String;)I
-
-accessible method net/minecraft/server/command/TeamCommand executeAdd (Lnet/minecraft/server/command/ServerCommandSource;Ljava/lang/String;Lnet/minecraft/text/Text;)I
-
-accessible method net/minecraft/server/command/TeamCommand executeRemove (Lnet/minecraft/server/command/ServerCommandSource;Lnet/minecraft/scoreboard/Team;)I
-
-accessible method net/minecraft/server/command/TeamCommand executeJoin (Lnet/minecraft/server/command/ServerCommandSource;Lnet/minecraft/scoreboard/Team;Ljava/util/Collection;)I
-
-accessible method net/minecraft/server/command/TeamCommand executeLeave (Lnet/minecraft/server/command/ServerCommandSource;Ljava/util/Collection;)I
-
-accessible method net/minecraft/server/command/TeamCommand executeEmpty (Lnet/minecraft/server/command/ServerCommandSource;Lnet/minecraft/scoreboard/Team;)I
-
-accessible method net/minecraft/server/command/TeamCommand executeListTeams (Lnet/minecraft/server/command/ServerCommandSource;)I
-
-accessible method net/minecraft/server/command/TeamCommand executeListMembers (Lnet/minecraft/server/command/ServerCommandSource;Lnet/minecraft/scoreboard/Team;)I
-
-accessible method net/minecraft/server/command/TeamCommand executeModifyColor (Lnet/minecraft/server/command/ServerCommandSource;Lnet/minecraft/scoreboard/Team;Lnet/minecraft/util/Formatting;)I
-
-accessible method net/minecraft/server/command/TeamCommand executeModifyPrefix (Lnet/minecraft/server/command/ServerCommandSource;Lnet/minecraft/scoreboard/Team;Lnet/minecraft/text/Text;)I
-
-accessible method net/minecraft/server/command/TeamCommand executeModifySuffix (Lnet/minecraft/server/command/ServerCommandSource;Lnet/minecraft/scoreboard/Team;Lnet/minecraft/text/Text;)I
-
-accessible method net/minecraft/server/command/TeamCommand executeModifyDisplayName (Lnet/minecraft/server/command/ServerCommandSource;Lnet/minecraft/scoreboard/Team;Lnet/minecraft/text/Text;)I
-
-accessible method net/minecraft/server/command/TeamCommand executeModifyFriendlyFire (Lnet/minecraft/server/command/ServerCommandSource;Lnet/minecraft/scoreboard/Team;Z)I
-
-accessible method net/minecraft/server/command/TeamCommand executeModifyCollisionRule (Lnet/minecraft/server/command/ServerCommandSource;Lnet/minecraft/scoreboard/Team;Lnet/minecraft/scoreboard/AbstractTeam$CollisionRule;)I
-
-accessible method net/minecraft/server/command/TeamCommand executeModifyNametagVisibility (Lnet/minecraft/server/command/ServerCommandSource;Lnet/minecraft/scoreboard/Team;Lnet/minecraft/scoreboard/AbstractTeam$VisibilityRule;)I
-
-accessible method net/minecraft/server/command/TeamCommand executeModifySeeFriendlyInvisibles (Lnet/minecraft/server/command/ServerCommandSource;Lnet/minecraft/scoreboard/Team;Z)I
-
-accessible method net/minecraft/server/command/TeamCommand executeModifyDeathMessageVisibility (Lnet/minecraft/server/command/ServerCommandSource;Lnet/minecraft/scoreboard/Team;Lnet/minecraft/scoreboard/AbstractTeam$VisibilityRule;)I
