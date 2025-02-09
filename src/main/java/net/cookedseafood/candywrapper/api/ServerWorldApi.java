@@ -1,4 +1,4 @@
-package org.charcoalwhite.candywrapper.api;
+package net.cookedseafood.candywrapper.api;
 
 import com.google.common.collect.Lists;
 import java.util.List;

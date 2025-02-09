@@ -1,11 +1,11 @@
-package org.charcoalwhite.candywrapper.mixin;
+package net.cookedseafood.candywrapper.mixin;
 
 import java.util.Set;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.network.packet.s2c.play.EntityPassengersSetS2CPacket;
 import net.minecraft.server.network.ServerPlayerEntity;
-import org.charcoalwhite.candywrapper.api.EntityApi;
+import net.cookedseafood.candywrapper.api.EntityApi;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;

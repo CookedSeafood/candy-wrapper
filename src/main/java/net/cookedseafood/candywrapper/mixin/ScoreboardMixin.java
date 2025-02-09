@@ -1,11 +1,11 @@
-package org.charcoalwhite.candywrapper.mixin;
+package net.cookedseafood.candywrapper.mixin;
 
 import net.minecraft.scoreboard.Scoreboard;
 import net.minecraft.scoreboard.ScoreboardCriterion;
 import net.minecraft.scoreboard.ScoreboardObjective;
 import net.minecraft.scoreboard.number.NumberFormat;
 import net.minecraft.text.Text;
-import org.charcoalwhite.candywrapper.api.ScoreboardApi;
+import net.cookedseafood.candywrapper.api.ScoreboardApi;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

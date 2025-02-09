@@ -1,4 +1,4 @@
-package org.charcoalwhite.candywrapper;
+package net.cookedseafood.candywrapper;
 
 import net.fabricmc.api.ClientModInitializer;
 

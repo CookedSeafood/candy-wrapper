@@ -1,6 +1,6 @@
 {
 	"required": true,
-	"package": "org.charcoalwhite.candywrapper.mixin",
+	"package": "net.cookedseafood.candywrapper.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
 		"EntityMixin",

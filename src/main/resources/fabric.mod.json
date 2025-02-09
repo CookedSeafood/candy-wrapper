@@ -3,28 +3,28 @@
 	"id": "candywrapper",
 	"version": "${version}",
 	"name": "CandyWrapper",
-	"description": "A library mod for CharcoalWhite's mods.",
+	"description": "A library mod for CookedSeafood's mods.",
 	"authors": [
 		{
-			"name": "CharcoalWhite",
+			"name": "CookedSeafood",
 			"contact": {
-				"homepage": "https://github.com/CharcoalWhite"
+				"homepage": "https://github.com/CookedSeafood"
 			}
 		}
 	],
 	"contact": {
 		"homepage": "https://modrinth.com/mod/CandyWrapper",
-		"sources": "https://github.com/CharcoalWhite/CandyWrappe"
+		"sources": "https://github.com/CookedSeafood/CandyWrappe"
 	},
 	"license": "GNU-GPL-3.0",
 	"icon": "assets/candywrapper/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"org.charcoalwhite.candywrapper.CandyWrapper"
+			"net.cookedseafood.candywrapper.CandyWrapper"
 		],
 		"client": [
-			"org.charcoalwhite.candywrapper.CandyWrapperClient"
+			"net.cookedseafood.candywrapper.CandyWrapperClient"
 		]
 	},
 	"mixins": [
@@ -35,7 +35,7 @@
 		}
 	],
 	"depends": {
-		"fabricloader": ">=0.16.9",
+		"fabricloader": ">=0.16.10",
 		"minecraft": "1.21.4",
 		"java": ">=21",
 		"fabric-api": "*"
@@ -46,19 +46,19 @@
 	"custom": {
 		"loom:injected_interfaces": {
 			"net/minecraft/class_269": [
-				"org/charcoalwhite/candywrapper/api/ScoreboardApi"
+				"net/cookedseafood/candywrapper/api/ScoreboardApi"
 			],
 			"net/minecraft/class_1297": [
-				"org/charcoalwhite/candywrapper/api/EntityApi"
+				"net/cookedseafood/candywrapper/api/EntityApi"
 			],
 			"net/minecraft/class_3218": [
-				"org/charcoalwhite/candywrapper/api/ServerWorldApi"
+				"net/cookedseafood/candywrapper/api/ServerWorldApi"
 			],
 			"net/minecraft/class_3222": [
-				"org/charcoalwhite/candywrapper/api/ServerPlayerEntityApi"
+				"net/cookedseafood/candywrapper/api/ServerPlayerEntityApi"
 			],
 			"net/minecraft/class_9304": [
-				"org/charcoalwhite/candywrapper/api/ItemEnchantmentsComponentApi"
+				"net/cookedseafood/candywrapper/api/ItemEnchantmentsComponentApi"
 			]
 		}
 	},

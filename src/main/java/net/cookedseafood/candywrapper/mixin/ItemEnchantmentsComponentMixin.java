@@ -1,11 +1,11 @@
-package org.charcoalwhite.candywrapper.mixin;
+package net.cookedseafood.candywrapper.mixin;
 
 import java.util.Optional;
 import java.util.Set;
 import net.minecraft.component.type.ItemEnchantmentsComponent;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.registry.entry.RegistryEntry;
-import org.charcoalwhite.candywrapper.api.ItemEnchantmentsComponentApi;
+import net.cookedseafood.candywrapper.api.ItemEnchantmentsComponentApi;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 

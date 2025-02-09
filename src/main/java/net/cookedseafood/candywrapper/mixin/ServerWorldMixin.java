@@ -1,11 +1,11 @@
-package org.charcoalwhite.candywrapper.mixin;
+package net.cookedseafood.candywrapper.mixin;
 
 import java.util.List;
 import java.util.function.Predicate;
 import net.minecraft.entity.Entity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.TypeFilter;
-import org.charcoalwhite.candywrapper.api.ServerWorldApi;
+import net.cookedseafood.candywrapper.api.ServerWorldApi;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 

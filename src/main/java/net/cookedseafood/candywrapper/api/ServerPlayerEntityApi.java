@@ -1,4 +1,4 @@
-package org.charcoalwhite.candywrapper.api;
+package net.cookedseafood.candywrapper.api;
 
 import net.minecraft.scoreboard.ScoreHolder;
 

@@ -1,6 +1,6 @@
 {
 	"required": true,
-	"package": "org.charcoalwhite.candywrapper.mixin.client",
+	"package": "net.cookedseafood.candywrapper.mixin.client",
 	"compatibilityLevel": "JAVA_21",
 	"client": [
 
