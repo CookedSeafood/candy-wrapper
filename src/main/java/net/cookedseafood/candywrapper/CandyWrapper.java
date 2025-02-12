@@ -14,9 +14,9 @@ public class CandyWrapper implements ModInitializer {
 	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-	public static final byte versionMajor = 0;
-	public static final byte versionMinor = 4;
-	public static final byte versionPatch = 1;
+	public static final byte VERSION_MAJOR = 0;
+	public static final byte VERSION_MINOR = 4;
+	public static final byte VERSION_PATCH = 2;
 
 	@Override
 	public void onInitialize() {

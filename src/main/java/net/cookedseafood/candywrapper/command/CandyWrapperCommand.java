@@ -19,7 +19,7 @@ public class CandyWrapperCommand {
     }
 
     public static int executeVersion(ServerCommandSource source) {
-        source.sendFeedback(() -> Text.literal("CandyWrapper " + CandyWrapper.versionMajor + "." + CandyWrapper.versionMinor + "." + CandyWrapper.versionPatch), false);
+        source.sendFeedback(() -> Text.literal("CandyWrapper " + CandyWrapper.VERSION_MAJOR + "." + CandyWrapper.VERSION_MINOR + "." + CandyWrapper.VERSION_PATCH), false);
         return 0;
     }
 }
