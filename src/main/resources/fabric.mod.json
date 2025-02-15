@@ -51,6 +51,9 @@
 			"net/minecraft/class_1297": [
 				"net/cookedseafood/candywrapper/api/EntityApi"
 			],
+			"net/minecraft/class_1309": [
+				"net/cookedseafood/candywrapper/api/LivingEntityApi"
+			],
 			"net/minecraft/class_1799": [
 				"net/cookedseafood/candywrapper/api/ItemStackApi"
 			],
