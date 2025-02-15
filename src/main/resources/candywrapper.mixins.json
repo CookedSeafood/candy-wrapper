@@ -6,6 +6,7 @@
 		"EntityMixin",
 		"ItemEnchantmentsComponentMixin",
 		"ItemStackMixin",
+		"LivingEntityMixin",
 		"ScoreboardMixin",
 		"ServerPlayerEntityMixin",
 		"ServerWorldMixin"
