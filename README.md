@@ -14,3 +14,6 @@ Other utils:
 - `ServerPlayerEntity.getScoreHolder()` for `ScoreHolder.fromProfile(player.getGameProfile())`.
 - `Entity.hasCommandTag(String commandTag)` for `Entity.getCommandTags().contains(String commandTag)`
 - `ItemStack.getCustomModifiers()` get NbtList `modifiers` in NbtComponent `minecraft:custom_data`.
+- `LivingEntity.getCustomModifiers()` get custom modifiers from equipped `ItemStack` and filter based on `slot` field.
+- `LivingEntity.getCustomModifiers(String attribute)` get eligible custom modifiers and filter based on `attribute` field.
+- `LivingEntity.getCustomModifiedValue(String attribute, double base)` double to double.
