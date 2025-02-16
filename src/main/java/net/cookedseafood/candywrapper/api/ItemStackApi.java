@@ -6,4 +6,8 @@ public interface ItemStackApi {
     default NbtList getCustomModifiers() {
         return new NbtList();
     }
+
+    default NbtList getCustomStatusEffects() {
+        return new NbtList();
+    }
 }
