@@ -7,8 +7,8 @@
 		"ItemEnchantmentsComponentMixin",
 		"ItemStackMixin",
 		"LivingEntityMixin",
+		"PlayerEntityMixin",
 		"ScoreboardMixin",
-		"ServerPlayerEntityMixin",
 		"ServerWorldMixin"
 	],
 	"injectors": {
