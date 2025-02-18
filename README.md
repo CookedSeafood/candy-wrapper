@@ -18,7 +18,7 @@ Other utils:
 - `LivingEntity.getCustomModifiers()` get custom modifiers from equipped `ItemStack` and filter based on `slot` field.
 - `LivingEntity.getCustomModifiers(String attribute)` get eligible custom modifiers and filter based on `attribute` field.
 - `LivingEntity.getCustomModifiedValue(String attribute, double base)` String and double to double.
-- `LivingEntity.get/has/add/setCustomStatusEffects()` Scoreboard-based status effect.
+- `LivingEntity.get/has/add/setCustomStatusEffects(...)` Scoreboard-based status effect.
 
 ## FAQ
 
