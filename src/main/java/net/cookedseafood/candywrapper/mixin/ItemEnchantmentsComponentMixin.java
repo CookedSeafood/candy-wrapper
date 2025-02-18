@@ -16,12 +16,8 @@ public abstract class ItemEnchantmentsComponentMixin implements ItemEnchantments
 		Optional<RegistryEntry<Enchantment>> matchedEnchantment = this.getEnchantments()
 			.stream()
 			.filter(presentedEnchantment -> presentedEnchantment.getIdAsString().equals(enchantment))
-			.findFirst();
-        if (matchedEnchantment.isPresent()) {
-			return this.getLevel(matchedEnchantment.get());
-        }
-
-        return 0;
+			.findAny();
+        return matchedEnchantment.isPresent() ? this.getLevel(matchedEnchantment.get()) : 0;
     }
 
     @Shadow

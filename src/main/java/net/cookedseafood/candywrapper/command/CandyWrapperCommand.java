@@ -8,6 +8,9 @@ import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.text.Text;
 
 public class CandyWrapperCommand {
+    public CandyWrapperCommand() {
+    }
+
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher, CommandRegistryAccess registryAccess) {
         dispatcher.register(
             CommandManager.literal("candywrapper")
