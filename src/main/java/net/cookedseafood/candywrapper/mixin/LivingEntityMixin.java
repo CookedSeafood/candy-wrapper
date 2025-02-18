@@ -115,17 +115,17 @@ public abstract class LivingEntityMixin implements LivingEntityApi {
 
     @Override
     public boolean hasCustomStatusEffect(String id, int amplifier) {
-        return this.getCustomStatusEffect(id, amplifier).isEmpty();
+        return !this.getCustomStatusEffect(id, amplifier).isEmpty();
     }
 
     @Override
     public boolean hasCustomStatusEffect(String id) {
-        return this.getCustomStatusEffects(id).isEmpty();
+        return !this.getCustomStatusEffects(id).isEmpty();
     }
     
     @Override
     public boolean hasCustomStatusEffect() {
-        return this.getCustomStatusEffects().isEmpty();
+        return !this.getCustomStatusEffects().isEmpty();
     }
 
     @Override
