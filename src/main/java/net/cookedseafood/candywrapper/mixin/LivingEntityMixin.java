@@ -46,12 +46,11 @@ public abstract class LivingEntityMixin implements LivingEntityApi {
     public NbtCompound getActiveCustomStatusEffect(String id) {
         NbtCompound activeStatusEffect = new NbtCompound();
         ServerScoreboard scoreboard = ((LivingEntity)(Object)this).getServer().getScoreboard();
-        ScoreHolder scoreHolder = this.getScoreHolder();
         Object[] activeStatusEffectObject = scoreboard.getObjectives()
             .stream()
             .filter(objective -> objective.getName().startsWith("status_effect."))
             .filter(objective -> objective.getName().contains(id.replace(':', '.')))
-            .map(objective -> new Object[] {objective, scoreboard.getOrCreateScore(scoreHolder, objective).getScore()})
+            .map(objective -> new Object[] {objective, scoreboard.getOrCreateScore(this.getScoreHolder(), objective).getScore()})
             .filter(object -> (int)object[1] != 0)
             .map(object -> new Object[] {object[0], object[1], ((ScoreboardObjective)object[0]).getName()})
             .map(object -> new Object[] {object[0], object[1], Integer.parseInt(((String)object[2]).substring(((String)object[2]).lastIndexOf('_') + 1))})
@@ -71,12 +70,11 @@ public abstract class LivingEntityMixin implements LivingEntityApi {
     public NbtList getCustomStatusEffects(String id) {
         NbtList statusEffects = new NbtList();
         ServerScoreboard scoreboard = ((LivingEntity)(Object)this).getServer().getScoreboard();
-        ScoreHolder scoreHolder = this.getScoreHolder();
         scoreboard.getObjectives()
             .stream()
             .filter(objective -> objective.getName().startsWith("status_effect."))
             .filter(objective -> objective.getName().contains(id.replace(':', '.')))
-            .map(objective -> new Object[] {objective, scoreboard.getOrCreateScore(scoreHolder, objective).getScore()})
+            .map(objective -> new Object[] {objective, scoreboard.getOrCreateScore(this.getScoreHolder(), objective).getScore()})
             .filter(object -> (int)object[1] != 0)
             .forEach(object -> {
                 ScoreboardObjective objective = (ScoreboardObjective)object[0];
@@ -94,11 +92,10 @@ public abstract class LivingEntityMixin implements LivingEntityApi {
     public NbtList getCustomStatusEffects() {
         NbtList statusEffects = new NbtList();
         ServerScoreboard scoreboard = ((LivingEntity)(Object)this).getServer().getScoreboard();
-        ScoreHolder scoreHolder = this.getScoreHolder();
         scoreboard.getObjectives()
             .stream()
             .filter(objective -> objective.getName().startsWith("status_effect."))
-            .map(objective -> new Object[] {objective, scoreboard.getOrCreateScore(scoreHolder, objective).getScore()})
+            .map(objective -> new Object[] {objective, scoreboard.getOrCreateScore(this.getScoreHolder(), objective).getScore()})
             .filter(object -> (int)object[1] != 0)
             .forEach(object -> {
                 ScoreboardObjective objective = (ScoreboardObjective)object[0];
@@ -115,17 +112,34 @@ public abstract class LivingEntityMixin implements LivingEntityApi {
 
     @Override
     public boolean hasCustomStatusEffect(String id, int amplifier) {
-        return !this.getCustomStatusEffect(id, amplifier).isEmpty();
+        ServerScoreboard scoreboard = ((LivingEntity)(Object)this).getServer().getScoreboard();
+        Identifier id2 = Identifier.of(id);
+        return scoreboard.getOrCreateScore(this.getScoreHolder(), scoreboard.getOrAddObjective("status_effect." + id2.getNamespace() + "." + id2.getPath() + "_" + amplifier, ScoreboardCriterion.DUMMY, Text.literal(StringUtils.capitalize(id2.getPath().replace('_', ' ')) + " " + amplifier), ScoreboardCriterion.RenderType.INTEGER, true, null)).getScore() != 0;
     }
 
     @Override
     public boolean hasCustomStatusEffect(String id) {
-        return !this.getCustomStatusEffects(id).isEmpty();
+        ServerScoreboard scoreboard = ((LivingEntity)(Object)this).getServer().getScoreboard();
+        return scoreboard.getObjectives()
+            .stream()
+            .filter(objective -> objective.getName().startsWith("status_effect."))
+            .filter(objective -> objective.getName().contains(id.replace(':', '.')))
+            .map(objective -> new Object[] {objective, scoreboard.getOrCreateScore(this.getScoreHolder(), objective).getScore()})
+            .filter(object -> (int)object[1] != 0)
+            .findAny()
+            .isPresent();
     }
     
     @Override
     public boolean hasCustomStatusEffect() {
-        return !this.getCustomStatusEffects().isEmpty();
+        ServerScoreboard scoreboard = ((LivingEntity)(Object)this).getServer().getScoreboard();
+        return scoreboard.getObjectives()
+            .stream()
+            .filter(objective -> objective.getName().startsWith("status_effect."))
+            .map(objective -> new Object[] {objective, scoreboard.getOrCreateScore(this.getScoreHolder(), objective).getScore()})
+            .filter(object -> (int)object[1] != 0)
+            .findAny()
+            .isPresent();
     }
 
     @Override
@@ -218,7 +232,7 @@ public abstract class LivingEntityMixin implements LivingEntityApi {
             .filter(modifier -> "add_multiplied_total".equals(modifier.getString("operation")))
             .forEach(modifier -> modified.setValue((1 + modifier.getDouble("base")) * modified.getValue()));
 
-        return modified.getValue();
+        return modified.doubleValue();
     }
 
     @Override

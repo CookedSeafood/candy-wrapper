@@ -16,7 +16,7 @@ public class CandyWrapper implements ModInitializer {
 
 	public static final byte VERSION_MAJOR = 0;
 	public static final byte VERSION_MINOR = 4;
-	public static final byte VERSION_PATCH = 8;
+	public static final byte VERSION_PATCH = 9;
 
 	@Override
 	public void onInitialize() {
@@ -24,7 +24,7 @@ public class CandyWrapper implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		LOGGER.info("[CandyWrapper] Candys are eaten.");
+		LOGGER.info("[CandyWrapper] Candys wrapped.");
 
 		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> CandyWrapperCommand.register(dispatcher, registryAccess));
 	}
