@@ -1,8 +1,8 @@
 {
 	"schemaVersion": 1,
-	"id": "candywrapper",
+	"id": "candy-wrapper",
 	"version": "${version}",
-	"name": "CandyWrapper",
+	"name": "Candy Wrapper",
 	"description": "A library mod for CookedSeafood's mods.",
 	"authors": [
 		{
@@ -13,11 +13,11 @@
 		}
 	],
 	"contact": {
-		"homepage": "https://modrinth.com/mod/CandyWrapper",
-		"sources": "https://github.com/CookedSeafood/CandyWrappe"
+		"homepage": "https://modrinth.com/mod/candy-wrapper",
+		"sources": "https://github.com/CookedSeafood/candy-wrapper"
 	},
 	"license": "GNU-GPL-3.0",
-	"icon": "assets/candywrapper/icon.png",
+	"icon": "assets/candy-wrapper/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
@@ -28,9 +28,9 @@
 		]
 	},
 	"mixins": [
-		"candywrapper.mixins.json",
+		"candy-wrapper.mixins.json",
 		{
-			"config": "candywrapper.client.mixins.json",
+			"config": "candy-wrapper.client.mixins.json",
 			"environment": "client"
 		}
 	],
@@ -68,5 +68,5 @@
 			]
 		}
 	},
-	"accessWidener": "candywrapper.accesswidener"
+	"accessWidener": "candy-wrapper.accesswidener"
 }

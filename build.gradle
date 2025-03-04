@@ -28,7 +28,7 @@ loom {
 		}
 	}
 
-	accessWidenerPath = file("src/main/resources/candywrapper.accesswidener")
+	accessWidenerPath = file("src/main/resources/candy-wrapper.accesswidener")
 }
 
 dependencies {

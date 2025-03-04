@@ -7,7 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class CandyWrapper implements ModInitializer {
-	public static final String MOD_ID = "candywrapper";
+	public static final String MOD_ID = "candy-wrapper";
 
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
@@ -15,8 +15,8 @@ public class CandyWrapper implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	public static final byte VERSION_MAJOR = 0;
-	public static final byte VERSION_MINOR = 4;
-	public static final byte VERSION_PATCH = 9;
+	public static final byte VERSION_MINOR = 5;
+	public static final byte VERSION_PATCH = 0;
 
 	@Override
 	public void onInitialize() {
@@ -24,7 +24,7 @@ public class CandyWrapper implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		LOGGER.info("[CandyWrapper] Candys wrapped.");
+		LOGGER.info("[Candy-Wrapper] Minecraft is a big big bug candy.");
 
 		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> CandyWrapperCommand.register(dispatcher, registryAccess));
 	}
