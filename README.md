@@ -1,6 +1,6 @@
-# CandyWrapper
+# Candy Wrapper
 
-CandyWarpper is a library mod I use in many of my mods. You are free to use it in your mods.
+Candy Warpper is a library mod I use in many of my mods. You are free to use it in your mods.
 
 Things made player riding possible:
 
@@ -13,12 +13,11 @@ Other utils:
 - `Scoreboard.getOrAddObjective(String name, ScoreboardCriterion criterion, Text displayName, ScoreboardCriterion.RenderType renderType, boolean displayAutoUpdate, @Nullable NumberFormat numberFormat)` GetOrAdd for objective.
 - `ServerPlayerEntity.getScoreHolder()` for `ScoreHolder.fromProfile(player.getGameProfile())`.
 - `Entity.hasCommandTag(String commandTag)` for `Entity.getCommandTags().contains(String commandTag)`
-- `ItemStack.getCustomModifiers()` get NbtList `status_effects` in NbtComponent `minecraft:custom_data`.
-- `ItemStack.getCustomModifiers()` get NbtList `modifiers` in NbtComponent `minecraft:custom_data`.
-- `LivingEntity.getCustomModifiers()` get custom modifiers from equipped `ItemStack` and filter based on `slot` field.
-- `LivingEntity.getCustomModifiers(String attribute)` get eligible custom modifiers and filter based on `attribute` field.
+- `ItemStack.getCustomStatusEffects()` NbtList `status_effects` in NbtComponent `minecraft:custom_data`.
+- `ItemStack.getCustomModifiers()` NbtList `modifiers` in NbtComponent `minecraft:custom_data`.
+- `LivingEntity.getCustomModifiers()` eligible custom modifiers, which from equipped `ItemStack`.
+- `LivingEntity.getCustomModifiers(String attribute)` eligible custom modifiers and filter based on `attribute` field.
 - `LivingEntity.getCustomModifiedValue(String attribute, double base)` String and double to double.
-- `LivingEntity.get/has/add/setCustomStatusEffects(...)` Scoreboard-based status effect.
 
 ## FAQ
 
