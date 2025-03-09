@@ -20,7 +20,7 @@ Scoreboard.getOrAddObjective(String name, ScoreboardCriterion criterion, Text di
 ServerPlayerEntity.getScoreHolder()
 
 // For Entity.getCommandTags().contains(String commandTag)
-Entity.hasCommandTag(String commandTag) 
+Entity.hasCommandTag(String commandTag)
 
 // Obviously.
 BossBarManager.contains(Identifier id)
