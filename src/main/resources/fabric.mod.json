@@ -60,6 +60,9 @@
 			"net/minecraft/class_1799": [
 				"net/cookedseafood/candywrapper/api/ItemStackApi"
 			],
+			"net/minecraft/class_3004": [
+				"net/cookedseafood/candywrapper/api/BossBarManagerApi"
+			],
 			"net/minecraft/class_3218": [
 				"net/cookedseafood/candywrapper/api/ServerWorldApi"
 			],
