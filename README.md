@@ -9,15 +9,40 @@ Things made player riding possible:
 
 Other utils:
 
-- `ItemEnchantmentsComponent.getLevel(String enchantment)` String to int.
-- `Scoreboard.getOrAddObjective(String name, ScoreboardCriterion criterion, Text displayName, ScoreboardCriterion.RenderType renderType, boolean displayAutoUpdate, @Nullable NumberFormat numberFormat)` GetOrAdd for objective.
-- `ServerPlayerEntity.getScoreHolder()` for `ScoreHolder.fromProfile(player.getGameProfile())`.
-- `Entity.hasCommandTag(String commandTag)` for `Entity.getCommandTags().contains(String commandTag)`
-- `ItemStack.getCustomStatusEffects()` NbtList `status_effects` in NbtComponent `minecraft:custom_data`.
-- `ItemStack.getCustomModifiers()` NbtList `modifiers` in NbtComponent `minecraft:custom_data`.
-- `LivingEntity.getCustomModifiers()` eligible custom modifiers, which from equipped `ItemStack`.
-- `LivingEntity.getCustomModifiers(String attribute)` eligible custom modifiers and filter based on `attribute` field.
-- `LivingEntity.getCustomModifiedValue(String attribute, double base)` String and double to double.
+```java
+// String to int.
+ItemEnchantmentsComponent.getLevel(String enchantment)
+
+// GetOrAdd for objective.
+Scoreboard.getOrAddObjective(String name, ScoreboardCriterion criterion, Text displayName, ScoreboardCriterion.RenderType renderType, boolean displayAutoUpdate, @Nullable NumberFormat numberFormat)
+
+// For ScoreHolder.fromProfile(player.getGameProfile())
+ServerPlayerEntity.getScoreHolder()
+
+// For Entity.getCommandTags().contains(String commandTag)
+Entity.hasCommandTag(String commandTag) 
+
+// Obviously.
+BossBarManager.contains(Identifier id)
+
+// Obviously.
+BossBarManager.remove(Identifier id)
+
+// Return NbtList `status_effects` in NbtComponent `minecraft:custom_data`.
+ItemStack.getCustomStatusEffects()
+
+// Return NbtList `modifiers` in NbtComponent `minecraft:custom_data`.
+ItemStack.getCustomModifiers()
+
+// Custom modifiers from equipped `ItemStack`.
+LivingEntity.getCustomModifiers()
+
+// Custom modifiers from equipped `ItemStack` filtered based on `attribute` field
+LivingEntity.getCustomModifiers(String attribute)
+
+// String and double to double.
+LivingEntity.getCustomModifiedValue(String attribute, double base)
+```
 
 ## FAQ
 
