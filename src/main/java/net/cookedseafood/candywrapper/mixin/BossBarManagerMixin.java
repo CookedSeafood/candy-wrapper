@@ -4,6 +4,7 @@ import java.util.Map;
 import net.cookedseafood.candywrapper.api.BossBarManagerApi;
 import net.minecraft.entity.boss.BossBarManager;
 import net.minecraft.entity.boss.CommandBossBar;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -14,6 +15,16 @@ public abstract class BossBarManagerMixin implements BossBarManagerApi {
     private Map<Identifier, CommandBossBar> commandBossBars;
 
     @Override
+    public CommandBossBar getOrAdd(Identifier id, Text displayName) {
+        CommandBossBar commandBossBar = this.get(id);
+        if (commandBossBar == null) {
+            commandBossBar = this.add(id, displayName);
+        }
+
+        return commandBossBar;
+    }
+
+    @Override
     public boolean contains(Identifier id) {
         return commandBossBars.containsKey(id);
     }
@@ -22,4 +33,10 @@ public abstract class BossBarManagerMixin implements BossBarManagerApi {
     public void remove(Identifier id) {
         commandBossBars.remove(id);
     }
+
+    @Shadow
+    public abstract CommandBossBar get(Identifier id);
+
+    @Shadow
+    public abstract CommandBossBar add(Identifier id, Text displayName);
 }

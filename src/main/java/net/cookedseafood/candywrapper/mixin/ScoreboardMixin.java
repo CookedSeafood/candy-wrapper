@@ -16,8 +16,7 @@ public abstract class ScoreboardMixin implements ScoreboardApi {
     public ScoreboardObjective getOrAddObjective(String name, ScoreboardCriterion criterion, Text displayName, ScoreboardCriterion.RenderType renderType, boolean displayAutoUpdate, @Nullable NumberFormat numberFormat) {
         ScoreboardObjective objective = this.getNullableObjective(name);
         if (objective == null) {
-            this.addObjective(name, criterion, displayName, renderType, displayAutoUpdate, numberFormat);
-            objective = this.getNullableObjective(name);
+            objective = this.addObjective(name, criterion, displayName, renderType, displayAutoUpdate, numberFormat);
         }
 
         return objective;
