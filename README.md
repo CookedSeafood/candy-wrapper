@@ -22,6 +22,9 @@ ServerPlayerEntity.getScoreHolder()
 // For Entity.getCommandTags().contains(String commandTag)
 Entity.hasCommandTag(String commandTag)
 
+// GetOrAdd for bossbar.
+BossBarManager.getOrAdd(Identifier id, Text displayName)
+
 // Obviously.
 BossBarManager.contains(Identifier id)
 
