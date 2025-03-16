@@ -10,41 +10,61 @@ Things made player riding possible:
 Other utils:
 
 ```java
-// String to int.
-ItemEnchantmentsComponent.getLevel(String enchantment)
+public class ItemEnchantmentsComponent {
+    public int getLevel(String enchantment) {}
+}
+```
 
-// GetOrAdd for objective.
-Scoreboard.getOrAddObjective(String name, ScoreboardCriterion criterion, Text displayName, ScoreboardCriterion.RenderType renderType, boolean displayAutoUpdate, @Nullable NumberFormat numberFormat)
+```java
+public class Scoreboard {
+    public ScoreboardObjective getOrAddObjective(String name, ScoreboardCriterion criterion, Text displayName, ScoreboardCriterion.RenderType renderType, boolean displayAutoUpdate, @Nullable NumberFormat numberFormat) {}
+}
+```
 
-// For ScoreHolder.fromProfile(player.getGameProfile())
-ServerPlayerEntity.getScoreHolder()
+```java
+public abstract class Entity {
+    public boolean hasCommandTag(String commandTag) {}
+}
+```
 
-// For Entity.getCommandTags().contains(String commandTag)
-Entity.hasCommandTag(String commandTag)
+```java
+public class BossBarManager {
+    public CommandBossBar getOrAdd(Identifier id, Text displayName) {}
 
-// GetOrAdd for bossbar.
-BossBarManager.getOrAdd(Identifier id, Text displayName)
+    public boolean contains(Identifier id) {}
 
-// Obviously.
-BossBarManager.contains(Identifier id)
+    public void remove(Identifier id) {}
+}
+```
 
-// Obviously.
-BossBarManager.remove(Identifier id)
+```java
+public final class ItemStack {
+    // From `modifiers` in `minecraft:custom_data`.
+    public NbtList getCustomModifiers() {}
 
-// Return NbtList `status_effects` in NbtComponent `minecraft:custom_data`.
-ItemStack.getCustomStatusEffects()
+    // From `status_effects` in `minecraft:custom_data`.
+    public NbtList getCustomStatusEffects() {}
+}
+```
 
-// Return NbtList `modifiers` in NbtComponent `minecraft:custom_data`.
-ItemStack.getCustomModifiers()
+```java
+public abstract class PlayerEntity {
+    public ScoreHolder getScoreHolder() {}
+}
+```
 
-// Custom modifiers from equipped `ItemStack`.
-LivingEntity.getCustomModifiers()
+```java
+public abstract class LivingEntity {
+    public ScoreHolder getScoreHolder() {}
 
-// Custom modifiers from equipped `ItemStack` filtered based on `attribute` field
-LivingEntity.getCustomModifiers(String attribute)
+    public double getCustomModifiedValue(String attribute, double base) {}
 
-// String and double to double.
-LivingEntity.getCustomModifiedValue(String attribute, double base)
+    // From equipped `ItemStack`s, filtered based on `attribute` field.
+    public NbtList getCustomModifiers(String attribute) {}
+
+    // From equipped `ItemStack`s.
+    public NbtList getCustomModifiers() {}
+}
 ```
 
 ## FAQ
