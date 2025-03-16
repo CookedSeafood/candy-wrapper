@@ -6,7 +6,7 @@ import net.minecraft.util.Identifier;
 
 public interface BossBarManagerApi {
     default CommandBossBar getOrAdd(Identifier id, Text displayName) {
-        return new CommandBossBar(id, displayName);
+        return null;
     }
 
     default boolean contains(Identifier id) {

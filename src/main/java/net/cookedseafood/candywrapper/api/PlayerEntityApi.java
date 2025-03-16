@@ -4,6 +4,6 @@ import net.minecraft.scoreboard.ScoreHolder;
 
 public interface PlayerEntityApi {
 	default ScoreHolder getScoreHolder() {
-		return ScoreHolder.WILDCARD;
+		return null;
 	}
 }

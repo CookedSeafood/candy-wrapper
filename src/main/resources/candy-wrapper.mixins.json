@@ -8,6 +8,7 @@
 		"ItemEnchantmentsComponentMixin",
 		"ItemStackMixin",
 		"LivingEntityMixin",
+		"MutableTextMixin",
 		"PlayerEntityMixin",
 		"ScoreboardMixin",
 		"ServerWorldMixin"

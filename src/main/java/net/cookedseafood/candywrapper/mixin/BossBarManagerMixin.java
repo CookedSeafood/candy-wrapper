@@ -26,12 +26,12 @@ public abstract class BossBarManagerMixin implements BossBarManagerApi {
 
     @Override
     public boolean contains(Identifier id) {
-        return commandBossBars.containsKey(id);
+        return this.commandBossBars.containsKey(id);
     }
 
     @Override
     public void remove(Identifier id) {
-        commandBossBars.remove(id);
+        this.commandBossBars.remove(id);
     }
 
     @Shadow

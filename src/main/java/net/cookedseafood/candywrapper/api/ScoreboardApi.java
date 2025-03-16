@@ -8,6 +8,6 @@ import org.jetbrains.annotations.Nullable;
 
 public interface ScoreboardApi {
     default ScoreboardObjective getOrAddObjective(String name, ScoreboardCriterion criterion, Text displayName, ScoreboardCriterion.RenderType renderType, boolean displayAutoUpdate, @Nullable NumberFormat numberFormat) {
-        return new ScoreboardObjective(null, null, null, null, null, false, null);
+        return null;
     }
 }

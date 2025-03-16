@@ -4,10 +4,10 @@ import net.minecraft.nbt.NbtList;
 
 public interface ItemStackApi {
     default NbtList getCustomModifiers() {
-        return new NbtList();
+        return null;
     }
 
     default NbtList getCustomStatusEffects() {
-        return new NbtList();
+        return null;
     }
 }

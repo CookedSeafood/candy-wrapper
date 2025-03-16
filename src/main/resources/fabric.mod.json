@@ -66,6 +66,9 @@
 			"net/minecraft/class_3218": [
 				"net/cookedseafood/candywrapper/api/ServerWorldApi"
 			],
+			"net/minecraft/class_5250": [
+				"net/cookedseafood/candywrapper/api/MutableTextApi"
+			],
 			"net/minecraft/class_9304": [
 				"net/cookedseafood/candywrapper/api/ItemEnchantmentsComponentApi"
 			]
