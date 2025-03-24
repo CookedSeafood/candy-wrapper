@@ -18,11 +18,14 @@ public class ItemEnchantmentsComponent {
 ```java
 public class Scoreboard {
     public ScoreboardObjective getOrAddObjective(String name, ScoreboardCriterion criterion, Text displayName, ScoreboardCriterion.RenderType renderType, boolean displayAutoUpdate, @Nullable NumberFormat numberFormat) {}
+
+    public Team getOrAddTeam(String name) {}
 }
 ```
 
 ```java
 public abstract class Entity {
+    // A shortcut of .getCommandTags().contains(commandTag)
     public boolean hasCommandTag(String commandTag) {}
 }
 ```
