@@ -18,11 +18,11 @@ public abstract class MutableTextMixin implements MutableTextApi {
     }
 
     @Shadow
-    abstract TextContent getContent();
+    public abstract TextContent getContent();
 
     @Shadow
-    abstract List<Text> getSiblings();
+    public abstract List<Text> getSiblings();
 
     @Shadow
-    abstract Style getStyle();
+    public abstract Style getStyle();
 }
