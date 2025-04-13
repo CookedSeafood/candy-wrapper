@@ -13,37 +13,37 @@ import org.spongepowered.asm.mixin.Shadow;
 
 @Mixin(Scoreboard.class)
 public abstract class ScoreboardMixin implements ScoreboardApi {
-    @Override
-    public ScoreboardObjective getOrAddObjective(String name, ScoreboardCriterion criterion, Text displayName, ScoreboardCriterion.RenderType renderType, boolean displayAutoUpdate, @Nullable NumberFormat numberFormat) {
-        ScoreboardObjective objective = this.getNullableObjective(name);
-        if (objective == null) {
-            objective = this.addObjective(name, criterion, displayName, renderType, displayAutoUpdate, numberFormat);
-        }
+	@Override
+	public ScoreboardObjective getOrAddObjective(String name, ScoreboardCriterion criterion, Text displayName, ScoreboardCriterion.RenderType renderType, boolean displayAutoUpdate, @Nullable NumberFormat numberFormat) {
+		ScoreboardObjective objective = this.getNullableObjective(name);
+		if (objective == null) {
+			objective = this.addObjective(name, criterion, displayName, renderType, displayAutoUpdate, numberFormat);
+		}
 
-        return objective;
-    }
+		return objective;
+	}
 
-    @Override
-    public Team getOrAddTeam(String name) {
-        Team team = this.getTeam(name);
-        if (team == null) {
-            team = this.addTeam(name);
-        }
+	@Override
+	public Team getOrAddTeam(String name) {
+		Team team = this.getTeam(name);
+		if (team == null) {
+			team = this.addTeam(name);
+		}
 
-        return team;
-    }
+		return team;
+	}
 
-    @Shadow
-    @Nullable
-    public abstract ScoreboardObjective getNullableObjective(@Nullable String name);
+	@Shadow
+	@Nullable
+	public abstract ScoreboardObjective getNullableObjective(@Nullable String name);
 
-    @Shadow
-    public abstract ScoreboardObjective addObjective(String name, ScoreboardCriterion criterion, Text displayName, ScoreboardCriterion.RenderType renderType, boolean displayAutoUpdate, @Nullable NumberFormat numberFormat);
+	@Shadow
+	public abstract ScoreboardObjective addObjective(String name, ScoreboardCriterion criterion, Text displayName, ScoreboardCriterion.RenderType renderType, boolean displayAutoUpdate, @Nullable NumberFormat numberFormat);
 
-    @Shadow
-    @Nullable
-    public abstract Team getTeam(String name);
+	@Shadow
+	@Nullable
+	public abstract Team getTeam(String name);
 
-    @Shadow
-    public abstract Team addTeam(String name);
+	@Shadow
+	public abstract Team addTeam(String name);
 }

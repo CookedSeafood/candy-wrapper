@@ -11,18 +11,18 @@ import org.spongepowered.asm.mixin.Shadow;
 
 @Mixin(ItemEnchantmentsComponent.class)
 public abstract class ItemEnchantmentsComponentMixin implements ItemEnchantmentsComponentApi {
-    @Override
-    public int getLevel(String enchantment) {
+	@Override
+	public int getLevel(String enchantment) {
 		Optional<RegistryEntry<Enchantment>> matchedEnchantment = this.getEnchantments()
 			.stream()
 			.filter(presentedEnchantment -> presentedEnchantment.getIdAsString().equals(enchantment))
 			.findAny();
-        return matchedEnchantment.isPresent() ? this.getLevel(matchedEnchantment.get()) : 0;
-    }
+		return matchedEnchantment.isPresent() ? this.getLevel(matchedEnchantment.get()) : 0;
+	}
 
-    @Shadow
-    public abstract Set<RegistryEntry<Enchantment>> getEnchantments();
+	@Shadow
+	public abstract Set<RegistryEntry<Enchantment>> getEnchantments();
 
-    @Shadow
-    public abstract int getLevel(RegistryEntry<Enchantment> enchantment);
+	@Shadow
+	public abstract int getLevel(RegistryEntry<Enchantment> enchantment);
 }

@@ -13,57 +13,76 @@ import org.spongepowered.asm.mixin.Shadow;
 
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin implements LivingEntityApi {
-    @Override
-    public ScoreHolder getScoreHolder() {
-        return ScoreHolder.fromName(((LivingEntity)(Object)this).getUuidAsString());
-    }
+	@Shadow
+	public float bodyYaw;
+	@Shadow
+	public float prevBodyYaw;
+	@Shadow
+	public float headYaw;
+	@Shadow
+	public float prevHeadYaw;
 
-    @Override
-    public double getCustomModifiedValue(String attribute, double base) {
-        NbtList modifiers = this.getCustomModifiers(attribute);
-        MutableDouble modified = new MutableDouble(base);
+	@Override
+	public float getBodyYawDelta() {
+		return this.bodyYaw - this.prevBodyYaw;
+	}
 
-        modifiers.stream()
-            .map(nbtElement -> (NbtCompound)nbtElement)
-            .filter(modifier -> "add_value".equals(modifier.getString("operation")))
-            .forEach(modifier -> modified.add(modifier.getDouble("base")));
+	@Override
+	public float getHeadYawDelta() {
+		return this.headYaw - this.prevHeadYaw;
+	}
 
-        MutableDouble multiplier = new MutableDouble(1);
+	@Override
+	public ScoreHolder getScoreHolder() {
+		return ScoreHolder.fromName(((LivingEntity)(Object)this).getUuidAsString());
+	}
 
-        modifiers.stream()
-            .map(nbtElement -> (NbtCompound)nbtElement)
-            .filter(modifier -> "add_multiplied_base".equals(modifier.getString("operation")))
-            .forEach(modifier -> multiplier.add(modifier.getDouble("base")));
+	@Override
+	public double getCustomModifiedValue(String attribute, double base) {
+		NbtList modifiers = this.getCustomModifiers(attribute);
+		MutableDouble modified = new MutableDouble(base);
 
-        modified.setValue(modified.getValue() * multiplier.getValue());
+		modifiers.stream()
+			.map(nbtElement -> (NbtCompound)nbtElement)
+			.filter(modifier -> "add_value".equals(modifier.getString("operation")))
+			.forEach(modifier -> modified.add(modifier.getDouble("base")));
 
-        modifiers.stream()
-            .map(nbtElement -> (NbtCompound)nbtElement)
-            .filter(modifier -> "add_multiplied_total".equals(modifier.getString("operation")))
-            .forEach(modifier -> modified.setValue((1 + modifier.getDouble("base")) * modified.getValue()));
+		MutableDouble multiplier = new MutableDouble(1);
 
-        return modified.doubleValue();
-    }
+		modifiers.stream()
+			.map(nbtElement -> (NbtCompound)nbtElement)
+			.filter(modifier -> "add_multiplied_base".equals(modifier.getString("operation")))
+			.forEach(modifier -> multiplier.add(modifier.getDouble("base")));
 
-    @Override
-    public NbtList getCustomModifiers(String attribute) {
-        NbtList modifiers = new NbtList();
-        this.getCustomModifiers().stream().map(nbtElement -> (NbtCompound)nbtElement).filter(modifier -> attribute.equals(modifier.getString("attribute"))).forEach(modifier -> modifiers.add(modifier));
-        return modifiers;
-    }
+		modified.setValue(modified.getValue() * multiplier.getValue());
 
-    @Override
-    public NbtList getCustomModifiers() {
-        NbtList modifiers = new NbtList();
-        this.getEquippedStack(EquipmentSlot.MAINHAND)   .getCustomModifiers().stream().map(nbtElement -> (NbtCompound)nbtElement).filter(modifier -> "mainhand" .equals(modifier.getString("slot"))).forEach(modifier -> modifiers.add(modifier));
-        this.getEquippedStack(EquipmentSlot.OFFHAND)    .getCustomModifiers().stream().map(nbtElement -> (NbtCompound)nbtElement).filter(modifier -> "offhand"  .equals(modifier.getString("slot"))).forEach(modifier -> modifiers.add(modifier));
-        this.getEquippedStack(EquipmentSlot.FEET)       .getCustomModifiers().stream().map(nbtElement -> (NbtCompound)nbtElement).filter(modifier -> "feet"     .equals(modifier.getString("slot"))).forEach(modifier -> modifiers.add(modifier));
-        this.getEquippedStack(EquipmentSlot.LEGS)       .getCustomModifiers().stream().map(nbtElement -> (NbtCompound)nbtElement).filter(modifier -> "legs"     .equals(modifier.getString("slot"))).forEach(modifier -> modifiers.add(modifier));
-        this.getEquippedStack(EquipmentSlot.CHEST)      .getCustomModifiers().stream().map(nbtElement -> (NbtCompound)nbtElement).filter(modifier -> "chest"    .equals(modifier.getString("slot"))).forEach(modifier -> modifiers.add(modifier));
-        this.getEquippedStack(EquipmentSlot.HEAD)       .getCustomModifiers().stream().map(nbtElement -> (NbtCompound)nbtElement).filter(modifier -> "head"     .equals(modifier.getString("slot"))).forEach(modifier -> modifiers.add(modifier));
-        return modifiers;
-    }
+		modifiers.stream()
+			.map(nbtElement -> (NbtCompound)nbtElement)
+			.filter(modifier -> "add_multiplied_total".equals(modifier.getString("operation")))
+			.forEach(modifier -> modified.setValue((1 + modifier.getDouble("base")) * modified.getValue()));
 
-    @Shadow
-    public abstract ItemStack getEquippedStack(EquipmentSlot slot);
+		return modified.doubleValue();
+	}
+
+	@Override
+	public NbtList getCustomModifiers(String attribute) {
+		NbtList modifiers = new NbtList();
+		this.getCustomModifiers().stream().map(nbtElement -> (NbtCompound)nbtElement).filter(modifier -> attribute.equals(modifier.getString("attribute"))).forEach(modifier -> modifiers.add(modifier));
+		return modifiers;
+	}
+
+	@Override
+	public NbtList getCustomModifiers() {
+		NbtList modifiers = new NbtList();
+		this.getEquippedStack(EquipmentSlot.MAINHAND)   .getCustomModifiers().stream().map(nbtElement -> (NbtCompound)nbtElement).filter(modifier -> "mainhand" .equals(modifier.getString("slot"))).forEach(modifier -> modifiers.add(modifier));
+		this.getEquippedStack(EquipmentSlot.OFFHAND)	.getCustomModifiers().stream().map(nbtElement -> (NbtCompound)nbtElement).filter(modifier -> "offhand"  .equals(modifier.getString("slot"))).forEach(modifier -> modifiers.add(modifier));
+		this.getEquippedStack(EquipmentSlot.FEET)	   .getCustomModifiers().stream().map(nbtElement -> (NbtCompound)nbtElement).filter(modifier -> "feet"	 .equals(modifier.getString("slot"))).forEach(modifier -> modifiers.add(modifier));
+		this.getEquippedStack(EquipmentSlot.LEGS)	   .getCustomModifiers().stream().map(nbtElement -> (NbtCompound)nbtElement).filter(modifier -> "legs"	 .equals(modifier.getString("slot"))).forEach(modifier -> modifiers.add(modifier));
+		this.getEquippedStack(EquipmentSlot.CHEST)	  .getCustomModifiers().stream().map(nbtElement -> (NbtCompound)nbtElement).filter(modifier -> "chest"	.equals(modifier.getString("slot"))).forEach(modifier -> modifiers.add(modifier));
+		this.getEquippedStack(EquipmentSlot.HEAD)	   .getCustomModifiers().stream().map(nbtElement -> (NbtCompound)nbtElement).filter(modifier -> "head"	 .equals(modifier.getString("slot"))).forEach(modifier -> modifiers.add(modifier));
+		return modifiers;
+	}
+
+	@Shadow
+	public abstract ItemStack getEquippedStack(EquipmentSlot slot);
 }

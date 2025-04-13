@@ -10,13 +10,13 @@ import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(ItemStack.class)
 public abstract class ItemStackMixin implements ItemStackApi {
-    @Override
-    public NbtList getCustomModifiers() {
-        return ((ItemStack)(Object)this).getOrDefault(DataComponentTypes.CUSTOM_DATA, NbtComponent.DEFAULT).copyNbt().getList("modifiers", NbtElement.COMPOUND_TYPE);
-    }
+	@Override
+	public NbtList getCustomModifiers() {
+		return ((ItemStack)(Object)this).getOrDefault(DataComponentTypes.CUSTOM_DATA, NbtComponent.DEFAULT).copyNbt().getList("modifiers", NbtElement.COMPOUND_TYPE);
+	}
 
-    @Override
-    public NbtList getCustomStatusEffects() {
-        return ((ItemStack)(Object)this).getOrDefault(DataComponentTypes.CUSTOM_DATA, NbtComponent.DEFAULT).copyNbt().getList("status_effects", NbtElement.COMPOUND_TYPE);
-    }
+	@Override
+	public NbtList getCustomStatusEffects() {
+		return ((ItemStack)(Object)this).getOrDefault(DataComponentTypes.CUSTOM_DATA, NbtComponent.DEFAULT).copyNbt().getList("status_effects", NbtElement.COMPOUND_TYPE);
+	}
 }

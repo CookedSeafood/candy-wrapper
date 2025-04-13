@@ -8,11 +8,11 @@ import net.minecraft.text.Text;
 import org.jetbrains.annotations.Nullable;
 
 public interface ScoreboardApi {
-    default ScoreboardObjective getOrAddObjective(String name, ScoreboardCriterion criterion, Text displayName, ScoreboardCriterion.RenderType renderType, boolean displayAutoUpdate, @Nullable NumberFormat numberFormat) {
-        return null;
-    }
+	default ScoreboardObjective getOrAddObjective(String name, ScoreboardCriterion criterion, Text displayName, ScoreboardCriterion.RenderType renderType, boolean displayAutoUpdate, @Nullable NumberFormat numberFormat) {
+		return null;
+	}
 
-    default Team getOrAddTeam(String name) {
-        return null;
-    }
+	default Team getOrAddTeam(String name) {
+		return null;
+	}
 }
