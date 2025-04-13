@@ -25,6 +25,18 @@ public class Scoreboard {
 
 ```java
 public abstract class Entity {
+    public double getXDelta() {}
+
+    public double getYDelta() {}
+
+    public double getZDelta() {}
+
+    public double getPosDelta() {}
+
+    public double getYawDelta() {}
+
+    public double getPitchDelta() {}
+
     // A shortcut of .getCommandTags().contains(commandTag)
     public boolean hasCommandTag(String commandTag) {}
 }
@@ -58,6 +70,10 @@ public abstract class PlayerEntity {
 
 ```java
 public abstract class LivingEntity {
+    public float getBodyYawDelta() {}
+
+    public float getHeadYawDelta() {}
+
     public ScoreHolder getScoreHolder() {}
 
     public double getCustomModifiedValue(String attribute, double base) {}
