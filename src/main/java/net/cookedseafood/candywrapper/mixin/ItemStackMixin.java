@@ -11,6 +11,11 @@ import org.spongepowered.asm.mixin.Mixin;
 @Mixin(ItemStack.class)
 public abstract class ItemStackMixin implements ItemStackApi {
 	@Override
+	public String getCustomId() {
+		return ((ItemStack)(Object)this).getOrDefault(DataComponentTypes.CUSTOM_DATA, NbtComponent.DEFAULT).copyNbt().getString("id");
+	}
+
+	@Override
 	public NbtList getCustomModifiers() {
 		return ((ItemStack)(Object)this).getOrDefault(DataComponentTypes.CUSTOM_DATA, NbtComponent.DEFAULT).copyNbt().getList("modifiers", NbtElement.COMPOUND_TYPE);
 	}
