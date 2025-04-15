@@ -54,6 +54,9 @@ public class BossBarManager {
 
 ```java
 public final class ItemStack {
+    // From `id` in `minecraft:custom_data`.
+    public NbtList getCustomId() {}
+
     // From `modifiers` in `minecraft:custom_data`.
     public NbtList getCustomModifiers() {}
 
