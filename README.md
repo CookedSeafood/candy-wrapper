@@ -24,12 +24,6 @@ public class Scoreboard {
 ```
 
 ```java
-public class NbtCompound {
-    public NbtCompound of(Map<String, NbtElement> entries) {}
-}
-```
-
-```java
 public abstract class Entity {
     public double getXDelta() {}
 
@@ -92,6 +86,18 @@ public abstract class LivingEntity {
 
     // From equipped `ItemStack`s.
     public NbtList getCustomModifiers() {}
+}
+```
+
+```java
+public class NbtElements {
+    public NbtCompound newNbtCompound(Map<String, NbtElement> entries) {}
+
+    public NbtCompound newNbtCompound() {}
+
+    public NbtList newNbtList(List<NbtElement> list, byte type) {}
+
+    public NbtList newNbtList() {}
 }
 ```
 
