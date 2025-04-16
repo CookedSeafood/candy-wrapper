@@ -7,7 +7,7 @@ import net.minecraft.nbt.NbtElement;
 import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(NbtCompound.class)
-public class NbtCompoundMixin implements NbtCompoundApi {
+public abstract class NbtCompoundMixin implements NbtCompoundApi {
     @Override
     public NbtCompound of(Map<String, NbtElement> entries) {
         return new NbtCompound(entries);

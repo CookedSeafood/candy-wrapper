@@ -60,7 +60,7 @@
 			"net/minecraft/class_1799": [
 				"net/cookedseafood/candywrapper/api/ItemStackApi"
 			],
-			"net.minecraft.class_2487": [
+			"net/minecraft/class_2487": [
 				"net/cookedseafood/candywrapper/api/NbtCompoundApi"
 			],
 			"net/minecraft/class_3004": [
