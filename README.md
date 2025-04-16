@@ -24,6 +24,12 @@ public class Scoreboard {
 ```
 
 ```java
+public class NbtCompound {
+    public NbtCompound of(Map<String, NbtElement> entries) {}
+}
+```
+
+```java
 public abstract class Entity {
     public double getXDelta() {}
 
