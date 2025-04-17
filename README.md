@@ -89,18 +89,6 @@ public abstract class LivingEntity {
 }
 ```
 
-```java
-public class NbtElements {
-    public NbtCompound newNbtCompound(Map<String, NbtElement> entries) {}
-
-    public NbtCompound newNbtCompound() {}
-
-    public NbtList newNbtList(List<NbtElement> list, byte type) {}
-
-    public NbtList newNbtList() {}
-}
-```
-
 ## FAQ
 
 ### Performence downside if only install the library?
