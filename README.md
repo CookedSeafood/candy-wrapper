@@ -93,4 +93,4 @@ public abstract class LivingEntity {
 
 ### Performence downside if only install the library?
 
-No. Except taking a few more milliseconds to start Minecraft.
+No. Except that it takes a few more milliseconds to start Minecraft.
