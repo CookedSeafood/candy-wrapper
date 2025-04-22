@@ -53,7 +53,19 @@ public class BossBarManager {
 ```
 
 ```java
+public interface RegistryEntry<T> {
+    public Identifier getId() {}
+}
+```
+
+```java
 public final class ItemStack {
+    // A shortcut of .getRegistryEntry().getId()
+    public Identifier getId() {}
+
+    // A shortcut of .getRegistryEntry().getIdAsString()
+    public String getIdAsString() {}
+
     // From `id` in `minecraft:custom_data`.
     public NbtList getCustomId() {}
 
