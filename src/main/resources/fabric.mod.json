@@ -35,7 +35,7 @@
 		}
 	],
 	"depends": {
-		"fabricloader": ">=0.16.13",
+		"fabricloader": ">=0.16.14",
 		"minecraft": "~1.21.4",
 		"java": ">=21",
 		"fabric-api": "*"
@@ -68,6 +68,9 @@
 			],
 			"net/minecraft/class_5250": [
 				"net/cookedseafood/candywrapper/api/MutableTextApi"
+			],
+			"net/minecraft/class_6880": [
+				"net/cookedseafood/candywrapper/api/RegistryEntryApi"
 			],
 			"net/minecraft/class_9304": [
 				"net/cookedseafood/candywrapper/api/ItemEnchantmentsComponentApi"

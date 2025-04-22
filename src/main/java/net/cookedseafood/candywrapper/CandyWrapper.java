@@ -16,7 +16,7 @@ public class CandyWrapper implements ModInitializer {
 
 	public static final byte VERSION_MAJOR = 0;
 	public static final byte VERSION_MINOR = 5;
-	public static final byte VERSION_PATCH = 10;
+	public static final byte VERSION_PATCH = 11;
 
 	@Override
 	public void onInitialize() {

@@ -10,6 +10,7 @@
 		"LivingEntityMixin",
 		"MutableTextMixin",
 		"PlayerEntityMixin",
+		"RegistryEntryMixin",
 		"ScoreboardMixin",
 		"ServerWorldMixin"
 	],
