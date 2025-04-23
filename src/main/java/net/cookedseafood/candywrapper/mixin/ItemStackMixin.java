@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.Shadow;
 public abstract class ItemStackMixin implements ItemStackApi {
 	@Override
 	public Identifier getId() {
-		return this.getRegistryEntry().getId();
+		return this.getRegistryEntry().getKey().map(key -> key.getValue()).orElse(Identifier.ofVanilla("unregistered"));
 	}
 
 	@Override
