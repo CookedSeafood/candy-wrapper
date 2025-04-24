@@ -12,6 +12,10 @@ public interface ItemStackApi {
 		return null;
 	}
 
+	default String getCustomIdOrId() {
+		return null;
+	}
+
 	default String getCustomId() {
 		return null;
 	}

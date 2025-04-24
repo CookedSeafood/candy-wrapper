@@ -25,6 +25,12 @@ public abstract class ItemStackMixin implements ItemStackApi {
 	}
 
 	@Override
+	public String getCustomIdOrId() {
+		String customId = this.getCustomId();
+		return customId == "" ? this.getIdAsString() : customId;
+	}
+
+	@Override
 	public String getCustomId() {
 		return ((ItemStack)(Object)this).getOrDefault(DataComponentTypes.CUSTOM_DATA, NbtComponent.DEFAULT).copyNbt().getString("id");
 	}
