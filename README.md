@@ -59,6 +59,8 @@ public final class ItemStack {
     // A shortcut of .getRegistryEntry().getIdAsString()
     public String getIdAsString() {}
 
+    public String getCustomIdOrId() {}
+
     // From `id` in `minecraft:custom_data`.
     public NbtList getCustomId() {}
 
