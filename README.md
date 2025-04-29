@@ -53,6 +53,12 @@ public class BossBarManager {
 ```
 
 ```java
+public class NbtCompound {
+    public void addAll() {}
+}
+```
+
+```java
 public final class ItemStack {
     public Identifier getId() {}
 
