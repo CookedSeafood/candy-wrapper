@@ -54,7 +54,9 @@ public class BossBarManager {
 
 ```java
 public class NbtCompound {
-    public void addAll(Map<? extends String, ? extends NbtElement> entries) {}
+    public NbtCompound getEntries() {}
+
+    public void putAll(NbtCompound entries) {}
 }
 ```
 
