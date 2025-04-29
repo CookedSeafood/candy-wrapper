@@ -9,6 +9,7 @@
 		"ItemStackMixin",
 		"LivingEntityMixin",
 		"MutableTextMixin",
+		"NbtCompoundApi",
 		"PlayerEntityMixin",
 		"ScoreboardMixin",
 		"ServerWorldMixin"
