@@ -13,7 +13,12 @@ public abstract class NbtCompoundMixin implements NbtCompoundApi {
     private Map<String, NbtElement> entries;
 
     @Override
-    public void putAll(Map<? extends String, ? extends NbtElement> entries) {
-        this.entries.putAll(entries);
+    public Map<? extends String, ? extends NbtElement> getEntries() {
+        return this.entries;
+    }
+
+    @Override
+    public void putAll(NbtCompound nbtCompound) {
+        this.entries.putAll(nbtCompound.getEntries());
     }
 }
