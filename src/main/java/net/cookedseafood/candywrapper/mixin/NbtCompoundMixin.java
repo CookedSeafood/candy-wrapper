@@ -1,6 +1,9 @@
 package net.cookedseafood.candywrapper.mixin;
 
+import java.util.Collection;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 import net.cookedseafood.candywrapper.api.NbtCompoundApi;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
@@ -15,6 +18,21 @@ public abstract class NbtCompoundMixin implements NbtCompoundApi {
     @Override
     public Map<? extends String, ? extends NbtElement> getEntries() {
         return this.entries;
+    }
+
+    @Override
+    public Set<Entry<String, NbtElement>> entrySet() {
+        return this.entries.entrySet();
+    }
+
+    @Override
+    public Set<String> keySet() {
+        return this.entries.keySet();
+    }
+
+    @Override
+    public Collection<NbtElement> values() {
+        return this.entries.values();
     }
 
     @Override
