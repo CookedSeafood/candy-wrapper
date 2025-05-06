@@ -16,104 +16,104 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(Entity.class)
 public abstract class EntityMixin implements EntityApi{
-	@Shadow
-	public double prevX;
-	@Shadow
-	public double prevY;
-	@Shadow
-	public double prevZ;
-	@Shadow
-	private Vec3d pos;
-	@Shadow
-	private float yaw;
-	@Shadow
-	private float pitch;
-	@Shadow
-	public float prevYaw;
-	@Shadow
-	public float prevPitch;
-
-	@Override
-	public double getXDelta() {
-		return this.pos.x - this.prevX;
-	}
-
-	@Override
-	public double getYDelta() {
-		return this.pos.y - this.prevY;
-	}
-
-	@Override
-	public double getZDelta() {
-		return this.pos.z - this.prevZ;
-	}
+    @Shadow
+    public double prevX;
+    @Shadow
+    public double prevY;
+    @Shadow
+    public double prevZ;
+    @Shadow
+    private Vec3d pos;
+    @Shadow
+    private float yaw;
+    @Shadow
+    private float pitch;
+    @Shadow
+    public float prevYaw;
+    @Shadow
+    public float prevPitch;
 
     @Override
-	public Vec3d getPosDelta() {
-		return this.pos.subtract(this.prevX, this.prevY, this.prevZ);
-	}
+    public double getXDelta() {
+        return this.pos.x - this.prevX;
+    }
 
-	@Override
-	public float getYawDelta() {
-		return this.yaw - this.prevYaw;
-	}
+    @Override
+    public double getYDelta() {
+        return this.pos.y - this.prevY;
+    }
 
-	@Override
-	public float getPitchDelta() {
-		return this.pitch - this.prevPitch;
-	}
+    @Override
+    public double getZDelta() {
+        return this.pos.z - this.prevZ;
+    }
 
-	@Override
-	public boolean hasCommandTag(String commandTag) {
-		return this.getCommandTags().contains(commandTag);
-	}
+    @Override
+    public Vec3d getPosDelta() {
+        return this.pos.subtract(this.prevX, this.prevY, this.prevZ);
+    }
 
-	@Redirect(
-		method = "startRiding(Lnet/minecraft/entity/Entity;Z)Z",
-		at = @At(
-			value = "INVOKE",
-			target = "Lnet/minecraft/entity/EntityType;isSaveable()Z"
-		)
-	)
-	private boolean isSaveableOrPlayer(EntityType<?> entityType) {
-		if (entityType.isSaveable()) {
-			return true;
-		}
+    @Override
+    public float getYawDelta() {
+        return this.yaw - this.prevYaw;
+    }
 
-		return this.isPlayer();
-	}
+    @Override
+    public float getPitchDelta() {
+        return this.pitch - this.prevPitch;
+    }
 
-	@Inject(
-		method = "addPassenger(Lnet/minecraft/entity/Entity;)V",
-		at = @At(
-			value = "INVOKE",
-			target = "Lnet/minecraft/entity/Entity;emitGameEvent(Lnet/minecraft/registry/entry/RegistryEntry;Lnet/minecraft/entity/Entity;)V",
-			shift = At.Shift.AFTER
-		)
-	)
-	private void sendPassengerAdditionPacket(Entity passenger, CallbackInfo ci) {
-		if (this.isPlayer()) {
-			((ServerPlayerEntity)(Object)this).networkHandler.sendPacket(new EntityPassengersSetS2CPacket(((Entity)(Object)this)));
-		}
-	}
+    @Override
+    public boolean hasCommandTag(String commandTag) {
+        return this.getCommandTags().contains(commandTag);
+    }
 
-	@Inject(
-		method = "removePassenger(Lnet/minecraft/entity/Entity;)V",
-		at = @At(
-			value = "INVOKE",
-			target = "Lnet/minecraft/entity/Entity;emitGameEvent(Lnet/minecraft/registry/entry/RegistryEntry;Lnet/minecraft/entity/Entity;)V",
-			shift = At.Shift.AFTER
-		)
-	)
-	private void sendPassengerRemovePacket(Entity passenger, CallbackInfo ci) {
-		if (this.isPlayer()) {
-			((ServerPlayerEntity)(Object)this).networkHandler.sendPacket(new EntityPassengersSetS2CPacket(((Entity)(Object)this)));
-		}
-	}
+    @Redirect(
+        method = "startRiding(Lnet/minecraft/entity/Entity;Z)Z",
+        at = @At(
+            value = "INVOKE",
+            target = "Lnet/minecraft/entity/EntityType;isSaveable()Z"
+        )
+    )
+    private boolean isSaveableOrPlayer(EntityType<?> entityType) {
+        if (entityType.isSaveable()) {
+            return true;
+        }
 
-	@Shadow
-	public abstract Set<String> getCommandTags();
+        return this.isPlayer();
+    }
 
-	@Shadow
-	public abstract boolean isPlayer();
+    @Inject(
+        method = "addPassenger(Lnet/minecraft/entity/Entity;)V",
+        at = @At(
+            value = "INVOKE",
+            target = "Lnet/minecraft/entity/Entity;emitGameEvent(Lnet/minecraft/registry/entry/RegistryEntry;Lnet/minecraft/entity/Entity;)V",
+            shift = At.Shift.AFTER
+        )
+    )
+    private void sendPassengerAdditionPacket(Entity passenger, CallbackInfo ci) {
+        if (this.isPlayer()) {
+            ((ServerPlayerEntity)(Object)this).networkHandler.sendPacket(new EntityPassengersSetS2CPacket(((Entity)(Object)this)));
+        }
+    }
+
+    @Inject(
+        method = "removePassenger(Lnet/minecraft/entity/Entity;)V",
+        at = @At(
+            value = "INVOKE",
+            target = "Lnet/minecraft/entity/Entity;emitGameEvent(Lnet/minecraft/registry/entry/RegistryEntry;Lnet/minecraft/entity/Entity;)V",
+            shift = At.Shift.AFTER
+        )
+    )
+    private void sendPassengerRemovePacket(Entity passenger, CallbackInfo ci) {
+        if (this.isPlayer()) {
+            ((ServerPlayerEntity)(Object)this).networkHandler.sendPacket(new EntityPassengersSetS2CPacket(((Entity)(Object)this)));
+        }
+    }
+
+    @Shadow
+    public abstract Set<String> getCommandTags();
+
+    @Shadow
+    public abstract boolean isPlayer();
 }

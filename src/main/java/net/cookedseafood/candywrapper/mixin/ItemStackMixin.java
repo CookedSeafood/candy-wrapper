@@ -14,37 +14,37 @@ import org.spongepowered.asm.mixin.Shadow;
 
 @Mixin(ItemStack.class)
 public abstract class ItemStackMixin implements ItemStackApi {
-	@Override
-	public Identifier getId() {
-		return this.getRegistryEntry().getKey().map(key -> key.getValue()).orElse(Identifier.ofVanilla("unregistered"));
-	}
+    @Override
+    public Identifier getId() {
+        return this.getRegistryEntry().getKey().map(key -> key.getValue()).orElse(Identifier.ofVanilla("unregistered"));
+    }
 
-	@Override
-	public String getIdAsString() {
-		return this.getRegistryEntry().getIdAsString();
-	}
+    @Override
+    public String getIdAsString() {
+        return this.getRegistryEntry().getIdAsString();
+    }
 
-	@Override
-	public String getCustomIdOrId() {
-		String customId = this.getCustomId();
-		return customId == "" ? this.getIdAsString() : customId;
-	}
+    @Override
+    public String getCustomIdOrId() {
+        String customId = this.getCustomId();
+        return customId == "" ? this.getIdAsString() : customId;
+    }
 
-	@Override
-	public String getCustomId() {
-		return ((ItemStack)(Object)this).getOrDefault(DataComponentTypes.CUSTOM_DATA, NbtComponent.DEFAULT).copyNbt().getString("id");
-	}
+    @Override
+    public String getCustomId() {
+        return ((ItemStack)(Object)this).getOrDefault(DataComponentTypes.CUSTOM_DATA, NbtComponent.DEFAULT).copyNbt().getString("id");
+    }
 
-	@Override
-	public NbtList getCustomModifiers() {
-		return ((ItemStack)(Object)this).getOrDefault(DataComponentTypes.CUSTOM_DATA, NbtComponent.DEFAULT).copyNbt().getList("modifiers", NbtElement.COMPOUND_TYPE);
-	}
+    @Override
+    public NbtList getCustomModifiers() {
+        return ((ItemStack)(Object)this).getOrDefault(DataComponentTypes.CUSTOM_DATA, NbtComponent.DEFAULT).copyNbt().getList("modifiers", NbtElement.COMPOUND_TYPE);
+    }
 
-	@Override
-	public NbtList getCustomStatusEffects() {
-		return ((ItemStack)(Object)this).getOrDefault(DataComponentTypes.CUSTOM_DATA, NbtComponent.DEFAULT).copyNbt().getList("status_effects", NbtElement.COMPOUND_TYPE);
-	}
+    @Override
+    public NbtList getCustomStatusEffects() {
+        return ((ItemStack)(Object)this).getOrDefault(DataComponentTypes.CUSTOM_DATA, NbtComponent.DEFAULT).copyNbt().getList("status_effects", NbtElement.COMPOUND_TYPE);
+    }
 
-	@Shadow
-	public abstract RegistryEntry<Item> getRegistryEntry();
+    @Shadow
+    public abstract RegistryEntry<Item> getRegistryEntry();
 }

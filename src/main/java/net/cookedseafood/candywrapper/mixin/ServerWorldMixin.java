@@ -11,11 +11,11 @@ import org.spongepowered.asm.mixin.Shadow;
 
 @Mixin(ServerWorld.class)
 public abstract class ServerWorldMixin implements ServerWorldApi {
-	@Override
-	public <T extends Entity> List<? extends T> getEntitiesByClass(Class<T> entityClass, Predicate<? super T> predicate) {
-		return this.getEntitiesByType(TypeFilter.instanceOf(entityClass), predicate);
-	}
+    @Override
+    public <T extends Entity> List<? extends T> getEntitiesByClass(Class<T> entityClass, Predicate<? super T> predicate) {
+        return this.getEntitiesByType(TypeFilter.instanceOf(entityClass), predicate);
+    }
 
-	@Shadow
-	public abstract <T extends Entity> List<? extends T> getEntitiesByType(TypeFilter<Entity, T> filter, Predicate<? super T> predicate);
+    @Shadow
+    public abstract <T extends Entity> List<? extends T> getEntitiesByType(TypeFilter<Entity, T> filter, Predicate<? super T> predicate);
 }

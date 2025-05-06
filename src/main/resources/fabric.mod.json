@@ -1,81 +1,81 @@
 {
-	"schemaVersion": 1,
-	"id": "candy-wrapper",
-	"version": "${version}",
-	"name": "Candy Wrapper",
-	"description": "A library mod for CookedSeafood's mods.",
-	"authors": [
-		{
-			"name": "CookedSeafood",
-			"contact": {
-				"homepage": "https://github.com/CookedSeafood"
-			}
-		}
-	],
-	"contact": {
-		"homepage": "https://modrinth.com/mod/candy-wrapper",
-		"sources": "https://github.com/CookedSeafood/candy-wrapper"
-	},
-	"license": "GNU-GPL-3.0",
-	"icon": "assets/candy-wrapper/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"net.cookedseafood.candywrapper.CandyWrapper"
-		],
-		"client": [
-			"net.cookedseafood.candywrapper.CandyWrapperClient"
-		]
-	},
-	"mixins": [
-		"candy-wrapper.mixins.json",
-		{
-			"config": "candy-wrapper.client.mixins.json",
-			"environment": "client"
-		}
-	],
-	"depends": {
-		"fabricloader": ">=0.16.14",
-		"minecraft": "~1.21.4",
-		"java": ">=21",
-		"fabric-api": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
-	},
-	"custom": {
-		"loom:injected_interfaces": {
-			"net/minecraft/class_269": [
-				"net/cookedseafood/candywrapper/api/ScoreboardApi"
-			],
-			"net/minecraft/class_1297": [
-				"net/cookedseafood/candywrapper/api/EntityApi"
-			],
-			"net/minecraft/class_1309": [
-				"net/cookedseafood/candywrapper/api/LivingEntityApi"
-			],
-			"net/minecraft/class_1657": [
-				"net/cookedseafood/candywrapper/api/PlayerEntityApi"
-			],
-			"net/minecraft/class_1799": [
-				"net/cookedseafood/candywrapper/api/ItemStackApi"
-			],
-			"net/minecraft/class_2487": [
-				"net/cookedseafood/candywrapper/api/NbtCompoundApi"
-			],
-			"net/minecraft/class_3004": [
-				"net/cookedseafood/candywrapper/api/BossBarManagerApi"
-			],
-			"net/minecraft/class_3218": [
-				"net/cookedseafood/candywrapper/api/ServerWorldApi"
-			],
-			"net/minecraft/class_5250": [
-				"net/cookedseafood/candywrapper/api/MutableTextApi"
-			],
-			"net/minecraft/class_9304": [
-				"net/cookedseafood/candywrapper/api/ItemEnchantmentsComponentApi"
-			]
-		}
-	},
-	"accessWidener": "candy-wrapper.accesswidener"
+    "schemaVersion": 1,
+    "id": "candy-wrapper",
+    "version": "${version}",
+    "name": "Candy Wrapper",
+    "description": "A library mod for CookedSeafood's mods.",
+    "authors": [
+        {
+            "name": "CookedSeafood",
+            "contact": {
+                "homepage": "https://github.com/CookedSeafood"
+            }
+        }
+    ],
+    "contact": {
+        "homepage": "https://modrinth.com/mod/candy-wrapper",
+        "sources": "https://github.com/CookedSeafood/candy-wrapper"
+    },
+    "license": "GNU-GPL-3.0",
+    "icon": "assets/candy-wrapper/icon.png",
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+            "net.cookedseafood.candywrapper.CandyWrapper"
+        ],
+        "client": [
+            "net.cookedseafood.candywrapper.CandyWrapperClient"
+        ]
+    },
+    "mixins": [
+        "candy-wrapper.mixins.json",
+        {
+            "config": "candy-wrapper.client.mixins.json",
+            "environment": "client"
+        }
+    ],
+    "depends": {
+        "fabricloader": ">=0.16.14",
+        "minecraft": "~1.21.4",
+        "java": ">=21",
+        "fabric-api": "*"
+    },
+    "suggests": {
+        "another-mod": "*"
+    },
+    "custom": {
+        "loom:injected_interfaces": {
+            "net/minecraft/class_269": [
+                "net/cookedseafood/candywrapper/api/ScoreboardApi"
+            ],
+            "net/minecraft/class_1297": [
+                "net/cookedseafood/candywrapper/api/EntityApi"
+            ],
+            "net/minecraft/class_1309": [
+                "net/cookedseafood/candywrapper/api/LivingEntityApi"
+            ],
+            "net/minecraft/class_1657": [
+                "net/cookedseafood/candywrapper/api/PlayerEntityApi"
+            ],
+            "net/minecraft/class_1799": [
+                "net/cookedseafood/candywrapper/api/ItemStackApi"
+            ],
+            "net/minecraft/class_2487": [
+                "net/cookedseafood/candywrapper/api/NbtCompoundApi"
+            ],
+            "net/minecraft/class_3004": [
+                "net/cookedseafood/candywrapper/api/BossBarManagerApi"
+            ],
+            "net/minecraft/class_3218": [
+                "net/cookedseafood/candywrapper/api/ServerWorldApi"
+            ],
+            "net/minecraft/class_5250": [
+                "net/cookedseafood/candywrapper/api/MutableTextApi"
+            ],
+            "net/minecraft/class_9304": [
+                "net/cookedseafood/candywrapper/api/ItemEnchantmentsComponentApi"
+            ]
+        }
+    },
+    "accessWidener": "candy-wrapper.accesswidener"
 }

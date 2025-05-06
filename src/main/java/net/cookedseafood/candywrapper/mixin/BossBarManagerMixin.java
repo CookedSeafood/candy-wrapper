@@ -11,32 +11,32 @@ import org.spongepowered.asm.mixin.Shadow;
 
 @Mixin(BossBarManager.class)
 public abstract class BossBarManagerMixin implements BossBarManagerApi {
-	@Shadow
-	private Map<Identifier, CommandBossBar> commandBossBars;
+    @Shadow
+    private Map<Identifier, CommandBossBar> commandBossBars;
 
-	@Override
-	public CommandBossBar getOrAdd(Identifier id, Text displayName) {
-		CommandBossBar commandBossBar = this.get(id);
-		if (commandBossBar == null) {
-			commandBossBar = this.add(id, displayName);
-		}
+    @Override
+    public CommandBossBar getOrAdd(Identifier id, Text displayName) {
+        CommandBossBar commandBossBar = this.get(id);
+        if (commandBossBar == null) {
+            commandBossBar = this.add(id, displayName);
+        }
 
-		return commandBossBar;
-	}
+        return commandBossBar;
+    }
 
-	@Override
-	public boolean contains(Identifier id) {
-		return this.commandBossBars.containsKey(id);
-	}
+    @Override
+    public boolean contains(Identifier id) {
+        return this.commandBossBars.containsKey(id);
+    }
 
-	@Override
-	public void remove(Identifier id) {
-		this.commandBossBars.remove(id);
-	}
+    @Override
+    public void remove(Identifier id) {
+        this.commandBossBars.remove(id);
+    }
 
-	@Shadow
-	public abstract CommandBossBar get(Identifier id);
+    @Shadow
+    public abstract CommandBossBar get(Identifier id);
 
-	@Shadow
-	public abstract CommandBossBar add(Identifier id, Text displayName);
+    @Shadow
+    public abstract CommandBossBar add(Identifier id, Text displayName);
 }
