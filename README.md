@@ -56,8 +56,6 @@ public class BossBarManager {
 public class NbtCompound {
     public Map<? extends String, ? extends NbtElement> getEntries() {}
 
-    public Set<Entry<String, NbtElement>> entrySet() {}
-
     public Set<String> keySet() {}
 
     public Collection<NbtElement> values() {}
