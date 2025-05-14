@@ -108,6 +108,24 @@ public abstract class LivingEntity {
 }
 ```
 
+```java
+public abstract class BossBars {
+    public abstract class Colors {
+        public static String getName(Formatting format) {}
+
+        public static Formatting getFormat(String name) {}
+
+        public static BossBar.Color byName(String name) {}
+
+        public static BossBar.Color byFormat(Formatting format) {}
+    }
+
+    public abstract class Styles {
+        public static BossBar.Style byName(String name) {}
+    }
+}
+```
+
 ## FAQ
 
 ### Performence downside if only install the library?
