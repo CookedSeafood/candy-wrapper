@@ -55,7 +55,7 @@ public class BossBarManager {
 ```java
 public abstract class BossBar {
     public static enum Color {
-        public 
+        public Formatting getFormat() {}
     }
 }
 ```
