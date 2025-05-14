@@ -53,6 +53,14 @@ public class BossBarManager {
 ```
 
 ```java
+public abstract class BossBar {
+    public static enum Color {
+        public 
+    }
+}
+```
+
+```java
 public class NbtCompound {
     public Map<? extends String, ? extends NbtElement> getEntries() {}
 
