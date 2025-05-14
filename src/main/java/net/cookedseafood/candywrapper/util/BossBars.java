@@ -8,7 +8,7 @@ public abstract class BossBars {
     public abstract class Colors {
         public static String getName(Formatting format) {
             return Arrays.stream(BossBar.Color.values())
-                .filter(color -> color.getTextFormat().equals(format))
+                .filter(color -> color.getFormat().equals(format))
                 .map(color -> color.getName())
                 .findAny()
                 .orElse("");
@@ -17,7 +17,7 @@ public abstract class BossBars {
         public static Formatting getFormat(String name) {
             return Arrays.stream(BossBar.Color.values())
                 .filter(color -> color.getName().equals(name))
-                .map(color -> color.getTextFormat())
+                .map(color -> color.getFormat())
                 .findAny()
                 .orElse(Formatting.RESET);
         }
@@ -31,7 +31,7 @@ public abstract class BossBars {
 
         public static BossBar.Color byFormat(Formatting format) {
             return Arrays.stream(BossBar.Color.values())
-                .filter(color -> color.getTextFormat().equals(format))
+                .filter(color -> color.getFormat().equals(format))
                 .findAny()
                 .get();
         }
