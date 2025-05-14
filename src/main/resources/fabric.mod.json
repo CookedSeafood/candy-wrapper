@@ -48,9 +48,6 @@
             "net/minecraft/class_269": [
                 "net/cookedseafood/candywrapper/api/ScoreboardApi"
             ],
-            "net/minecraft/class_1259": [
-                "net/cookedseafood/candywrapper/api/BossBarApi"
-            ],
             "net/minecraft/class_1259/class_1260": [
                 "net/cookedseafood/candywrapper/api/BossBarColorApi"
             ],

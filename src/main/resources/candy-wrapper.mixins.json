@@ -5,7 +5,6 @@
     "mixins": [
         "BossBarColorMixin",
         "BossBarManagerMixin",
-        "BossBarMixin",
         "EntityMixin",
         "ItemEnchantmentsComponentMixin",
         "ItemStackMixin",

@@ -1,10 +1,10 @@
-package net.cookedseafood.candywrapper.api;
+package net.cookedseafood.candywrapper.util;
 
 import java.util.Arrays;
 import net.minecraft.entity.boss.BossBar;
 import net.minecraft.util.Formatting;
 
-public interface BossBarApi {
+public abstract class BossBars {
     public abstract class Colors {
         public static String getName(Formatting format) {
             return Arrays.stream(BossBar.Color.values())
