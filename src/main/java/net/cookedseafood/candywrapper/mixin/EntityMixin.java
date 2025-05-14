@@ -17,11 +17,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(Entity.class)
 public abstract class EntityMixin implements EntityApi{
     @Shadow
-    public double prevX;
+    public double lastX;
     @Shadow
-    public double prevY;
+    public double lastY;
     @Shadow
-    public double prevZ;
+    public double lastZ;
     @Shadow
     private Vec3d pos;
     @Shadow
@@ -29,38 +29,38 @@ public abstract class EntityMixin implements EntityApi{
     @Shadow
     private float pitch;
     @Shadow
-    public float prevYaw;
+    public float lastYaw;
     @Shadow
-    public float prevPitch;
+    public float lastPitch;
 
     @Override
     public double getXDelta() {
-        return this.pos.x - this.prevX;
+        return this.pos.x - this.lastX;
     }
 
     @Override
     public double getYDelta() {
-        return this.pos.y - this.prevY;
+        return this.pos.y - this.lastY;
     }
 
     @Override
     public double getZDelta() {
-        return this.pos.z - this.prevZ;
+        return this.pos.z - this.lastZ;
     }
 
     @Override
     public Vec3d getPosDelta() {
-        return this.pos.subtract(this.prevX, this.prevY, this.prevZ);
+        return this.pos.subtract(this.lastX, this.lastY, this.lastZ);
     }
 
     @Override
     public float getYawDelta() {
-        return this.yaw - this.prevYaw;
+        return this.yaw - this.lastYaw;
     }
 
     @Override
     public float getPitchDelta() {
-        return this.pitch - this.prevPitch;
+        return this.pitch - this.lastPitch;
     }
 
     @Override
