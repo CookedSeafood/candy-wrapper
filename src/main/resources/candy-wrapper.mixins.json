@@ -3,7 +3,9 @@
     "package": "net.cookedseafood.candywrapper.mixin",
     "compatibilityLevel": "JAVA_21",
     "mixins": [
+        "BossBarColorMixin",
         "BossBarManagerMixin",
+        "BossBarMixin",
         "EntityMixin",
         "ItemEnchantmentsComponentMixin",
         "ItemStackMixin",
