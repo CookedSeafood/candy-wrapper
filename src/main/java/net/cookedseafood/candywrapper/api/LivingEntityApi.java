@@ -15,16 +15,4 @@ public interface LivingEntityApi {
     default ScoreHolder getScoreHolder() {
         return null;
     }
-
-    default double getCustomModifiedValue(String attribute, double base) {
-        return 0.0d;
-    }
-
-    default NbtList getCustomModifiers(String attribute) {
-        return null;
-    }
-
-    default NbtList getCustomModifiers() {
-        return null;
-    }
 }
