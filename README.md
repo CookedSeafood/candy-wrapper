@@ -78,17 +78,6 @@ public final class ItemStack {
 
     // A shortcut of .getRegistryEntry().getIdAsString()
     public String getIdAsString() {}
-
-    public String getCustomIdOrId() {}
-
-    // From `id` in `minecraft:custom_data`.
-    public NbtList getCustomId() {}
-
-    // From `modifiers` in `minecraft:custom_data`.
-    public NbtList getCustomModifiers() {}
-
-    // From `status_effects` in `minecraft:custom_data`.
-    public NbtList getCustomStatusEffects() {}
 }
 ```
 
@@ -105,14 +94,6 @@ public abstract class LivingEntity {
     public float getHeadYawDelta() {}
 
     public ScoreHolder getScoreHolder() {}
-
-    public double getCustomModifiedValue(String attribute, double base) {}
-
-    // From equipped `ItemStack`s, filtered based on `attribute` field.
-    public NbtList getCustomModifiers(String attribute) {}
-
-    // From equipped `ItemStack`s.
-    public NbtList getCustomModifiers() {}
 }
 ```
 
