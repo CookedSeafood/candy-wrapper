@@ -1,6 +1,5 @@
 package net.cookedseafood.candywrapper.mixin;
 
-import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 import net.cookedseafood.candywrapper.api.NbtCompoundApi;
@@ -22,11 +21,6 @@ public abstract class NbtCompoundMixin implements NbtCompoundApi {
     @Override
     public Set<String> keySet() {
         return this.entries.keySet();
-    }
-
-    @Override
-    public Collection<NbtElement> values() {
-        return this.entries.values();
     }
 
     @Override

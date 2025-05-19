@@ -1,6 +1,5 @@
 package net.cookedseafood.candywrapper.api;
 
-import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 import net.minecraft.nbt.NbtCompound;
@@ -12,10 +11,6 @@ public interface NbtCompoundApi {
     }
 
     default Set<String> keySet() {
-        return null;
-    }
-
-    default Collection<NbtElement> values() {
         return null;
     }
 
