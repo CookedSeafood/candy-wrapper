@@ -66,8 +66,6 @@ public class NbtCompound {
 
     public Set<String> keySet() {}
 
-    public Collection<NbtElement> values() {}
-
     public void putAll(NbtCompound entries) {}
 }
 ```
