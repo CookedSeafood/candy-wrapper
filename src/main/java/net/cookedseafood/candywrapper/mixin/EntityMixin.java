@@ -33,41 +33,6 @@ public abstract class EntityMixin implements EntityApi{
     @Shadow
     public float lastPitch;
 
-    @Override
-    public double getXDelta() {
-        return this.pos.x - this.lastX;
-    }
-
-    @Override
-    public double getYDelta() {
-        return this.pos.y - this.lastY;
-    }
-
-    @Override
-    public double getZDelta() {
-        return this.pos.z - this.lastZ;
-    }
-
-    @Override
-    public Vec3d getPosDelta() {
-        return this.pos.subtract(this.lastX, this.lastY, this.lastZ);
-    }
-
-    @Override
-    public float getYawDelta() {
-        return this.yaw - this.lastYaw;
-    }
-
-    @Override
-    public float getPitchDelta() {
-        return this.pitch - this.lastPitch;
-    }
-
-    @Override
-    public boolean hasCommandTag(String commandTag) {
-        return this.getCommandTags().contains(commandTag);
-    }
-
     @Redirect(
         method = "startRiding(Lnet/minecraft/entity/Entity;Z)Z",
         at = @At(
@@ -109,6 +74,41 @@ public abstract class EntityMixin implements EntityApi{
         if (this.isPlayer()) {
             ((ServerPlayerEntity)(Object)this).networkHandler.sendPacket(new EntityPassengersSetS2CPacket(((Entity)(Object)this)));
         }
+    }
+
+    @Override
+    public double getXDelta() {
+        return this.pos.x - this.lastX;
+    }
+
+    @Override
+    public double getYDelta() {
+        return this.pos.y - this.lastY;
+    }
+
+    @Override
+    public double getZDelta() {
+        return this.pos.z - this.lastZ;
+    }
+
+    @Override
+    public Vec3d getPosDelta() {
+        return this.pos.subtract(this.lastX, this.lastY, this.lastZ);
+    }
+
+    @Override
+    public float getYawDelta() {
+        return this.yaw - this.lastYaw;
+    }
+
+    @Override
+    public float getPitchDelta() {
+        return this.pitch - this.lastPitch;
+    }
+
+    @Override
+    public boolean hasCommandTag(String commandTag) {
+        return this.getCommandTags().contains(commandTag);
     }
 
     @Shadow

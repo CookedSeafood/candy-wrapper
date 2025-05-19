@@ -1,13 +1,8 @@
 package net.cookedseafood.candywrapper.mixin;
 
 import net.cookedseafood.candywrapper.api.LivingEntityApi;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.nbt.NbtList;
 import net.minecraft.scoreboard.ScoreHolder;
-import org.apache.commons.lang3.mutable.MutableDouble;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 

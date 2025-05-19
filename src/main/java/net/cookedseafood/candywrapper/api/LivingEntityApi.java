@@ -1,6 +1,5 @@
 package net.cookedseafood.candywrapper.api;
 
-import net.minecraft.nbt.NbtList;
 import net.minecraft.scoreboard.ScoreHolder;
 
 public interface LivingEntityApi {

@@ -10,6 +10,7 @@
         "ItemStackMixin",
         "LivingEntityMixin",
         "MutableTextMixin",
+        "NbtComponentMixin",
         "NbtCompoundMixin",
         "PlayerEntityMixin",
         "ScoreboardMixin",
