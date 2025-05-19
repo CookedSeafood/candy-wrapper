@@ -73,6 +73,12 @@ public class NbtCompound {
 ```
 
 ```java
+public class NbtComponent {
+    public NbtComponent copyFrom(NbtComponent nbtComponent) {}
+}
+```
+
+```java
 public final class ItemStack {
     public Identifier getId() {}
 
