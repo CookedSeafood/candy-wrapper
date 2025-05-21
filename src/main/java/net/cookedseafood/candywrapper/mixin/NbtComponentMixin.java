@@ -10,9 +10,9 @@ import org.spongepowered.asm.mixin.Shadow;
 public abstract class NbtComponentMixin implements NbtComponentApi {
     @Override
     public NbtComponent copyFrom(NbtComponent nbtComponent) {
-        return NbtComponent.of(this.copyNbt().copyFrom(nbtComponent.copyNbt()));
+        return NbtComponent.of(this.getNbt().copyFrom(nbtComponent.copyNbt()));
     }
 
     @Shadow
-    public abstract NbtCompound copyNbt();
+    public abstract NbtCompound getNbt();
 }
