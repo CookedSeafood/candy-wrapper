@@ -9,7 +9,7 @@ public interface BossBarManagerApi {
         return null;
     }
 
-    default boolean contains(Identifier id) {
+    default boolean containsKey(Identifier id) {
         return false;
     }
 
