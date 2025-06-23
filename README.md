@@ -46,7 +46,7 @@ public abstract class Entity {
 public class BossBarManager {
     public CommandBossBar getOrAdd(Identifier id, Text displayName) {}
 
-    public boolean contains(Identifier id) {}
+    public boolean containsKey(Identifier id) {}
 
     public void remove(Identifier id) {}
 }
