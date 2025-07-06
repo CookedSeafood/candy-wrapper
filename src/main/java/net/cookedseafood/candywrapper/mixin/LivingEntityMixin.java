@@ -9,6 +9,8 @@ import org.spongepowered.asm.mixin.Shadow;
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin implements LivingEntityApi {
     @Shadow
+    public boolean dead;
+    @Shadow
     public float bodyYaw;
     @Shadow
     public float lastBodyYaw;
@@ -16,6 +18,11 @@ public abstract class LivingEntityMixin implements LivingEntityApi {
     public float headYaw;
     @Shadow
     public float lastHeadYaw;
+
+    @Override
+    public void setDead(boolean dead) {
+        this.dead = dead;
+    }
 
     @Override
     public float getBodyYawDelta() {

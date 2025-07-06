@@ -93,6 +93,8 @@ public abstract class PlayerEntity {
 
 ```java
 public abstract class LivingEntity {
+    public void setDead(boolean dead) {}
+
     public float getBodyYawDelta() {}
 
     public float getHeadYawDelta() {}
