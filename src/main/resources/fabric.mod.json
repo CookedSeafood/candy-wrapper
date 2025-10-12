@@ -45,9 +45,6 @@
     },
     "custom": {
         "loom:injected_interfaces": {
-            "net/minecraft/class_243": [
-                "net/cookedseafood/candywrapper/api/Vec3dApi"
-            ],
             "net/minecraft/class_269": [
                 "net/cookedseafood/candywrapper/api/ScoreboardApi"
             ],
