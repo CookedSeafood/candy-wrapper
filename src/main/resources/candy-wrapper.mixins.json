@@ -14,7 +14,8 @@
         "NbtCompoundMixin",
         "PlayerEntityMixin",
         "ScoreboardMixin",
-        "ServerWorldMixin"
+        "ServerWorldMixin",
+        "Vec3dMixin"
     ],
     "injectors": {
         "defaultRequire": 1

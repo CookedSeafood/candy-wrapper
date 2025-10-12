@@ -104,6 +104,12 @@ public abstract class LivingEntity {
 ```
 
 ```java
+public class Vec3d {
+    public Vec3d ofTopCenter(Vec3i vec) {}
+}
+```
+
+```java
 public abstract class BossBars {
     public abstract class Colors {
         public static String getName(Formatting format) {}
