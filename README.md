@@ -86,6 +86,14 @@ public final class ItemStack {
 ```
 
 ```java
+public final class Item {
+    public boolean isIn(TagKey<Item> tag) {}
+
+    public boolean isIn(RegistryEntryList<Item> registryEntryList) {}
+}
+```
+
+```java
 public abstract class PlayerEntity {
     public ScoreHolder getScoreHolder() {}
 }
