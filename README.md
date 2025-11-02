@@ -87,6 +87,11 @@ public final class ItemStack {
 
 ```java
 public final class Item {
+    public Identifier getId() {}
+
+    // A shortcut of .getRegistryEntry().getIdAsString()
+    public String getIdAsString() {}
+
     public boolean isIn(TagKey<Item> tag) {}
 
     public boolean isIn(RegistryEntryList<Item> registryEntryList) {}
