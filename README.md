@@ -1,6 +1,6 @@
 # Candy Wrapper
 
-Candy Warpper is a library mod I use in many of my mods. You are free to use it in your mods.
+Candy Warpper is a library mod provides only util methods in a manner which prioritises OOP.
 
 Things made player riding possible:
 
@@ -106,6 +106,8 @@ public abstract class PlayerEntity {
 
 ```java
 public abstract class LivingEntity {
+    public List<RegistryEntry<Enchantment>> getEnchantments() {}
+
     public void setDead(boolean dead) {}
 
     public float getBodyYawDelta() {}
@@ -133,9 +135,3 @@ public abstract class BossBars {
     }
 }
 ```
-
-## FAQ
-
-### Performence downside if only install the library?
-
-No. Except that it takes a few more milliseconds to start Minecraft.
