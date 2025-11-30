@@ -106,6 +106,8 @@ public abstract class PlayerEntity {
 
 ```java
 public abstract class LivingEntity {
+    public List<RegistryEntry<Enchantment>> getEnchantments(RegistryKey<Enchantment> key) {}
+
     public List<RegistryEntry<Enchantment>> getEnchantments() {}
 
     public void setDead(boolean dead) {}

@@ -1,5 +1,6 @@
 package net.hederamc.candywrapper.mixin;
 
+import it.unimi.dsi.fastutil.objects.Object2IntMap.Entry;
 import java.util.ArrayList;
 import java.util.List;
 import net.hederamc.candywrapper.api.LivingEntityApi;
@@ -8,6 +9,7 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.scoreboard.ScoreHolder;
 import org.spongepowered.asm.mixin.Mixin;
@@ -27,8 +29,15 @@ public abstract class LivingEntityMixin implements LivingEntityApi {
     public float lastHeadYaw;
 
     @Override
-    public List<RegistryEntry<Enchantment>> getEnchantments() {
-        List<RegistryEntry<Enchantment>> enchantments = new ArrayList<>();
+    public List<Entry<RegistryEntry<Enchantment>>> getEnchantments(RegistryKey<Enchantment> key) {
+        List<Entry<RegistryEntry<Enchantment>>> enchantments = new ArrayList<>();
+        this.getEnchantments().stream().filter(entry -> entry.getKey().matchesKey(key)).forEach(entry -> enchantments.add(entry));
+        return enchantments;
+    }
+
+    @Override
+    public List<Entry<RegistryEntry<Enchantment>>> getEnchantments() {
+        List<Entry<RegistryEntry<Enchantment>>> enchantments = new ArrayList<>();
         for (EquipmentSlot slot : EquipmentSlot.values()) {
             ItemStack stack = this.getEquippedStack(slot);
             if (stack.isEmpty()) {
@@ -40,11 +49,7 @@ public abstract class LivingEntityMixin implements LivingEntityApi {
                 continue;
             }
 
-            for (RegistryEntry<Enchantment> registryEntry : component.getEnchantments()) {
-                if (registryEntry.value().slotMatches(slot)) {
-                    enchantments.add(registryEntry);
-                }
-            }
+            component.getEnchantmentEntries().stream().filter(entry -> entry.getKey().value().slotMatches(slot)).forEach(entry -> enchantments.add(entry));
         }
 
         return enchantments;
