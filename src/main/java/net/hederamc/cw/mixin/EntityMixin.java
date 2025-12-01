@@ -57,8 +57,9 @@ public abstract class EntityMixin implements EntityApi{
         )
     )
     private void sendPassengerAdditionPacket(Entity passenger, CallbackInfo ci) {
-        if (this.isPlayer()) {
-            ((ServerPlayerEntity)(Object)this).networkHandler.sendPacket(new EntityPassengersSetS2CPacket(((Entity)(Object)this)));
+        Entity entity = (Entity)(Object)this;
+        if (entity instanceof ServerPlayerEntity) {
+            ((ServerPlayerEntity)entity).networkHandler.sendPacket(new EntityPassengersSetS2CPacket(entity));
         }
     }
 
@@ -71,8 +72,9 @@ public abstract class EntityMixin implements EntityApi{
         )
     )
     private void sendPassengerRemovePacket(Entity passenger, CallbackInfo ci) {
-        if (this.isPlayer()) {
-            ((ServerPlayerEntity)(Object)this).networkHandler.sendPacket(new EntityPassengersSetS2CPacket(((Entity)(Object)this)));
+        Entity entity = (Entity)(Object)this;
+        if (entity instanceof ServerPlayerEntity) {
+            ((ServerPlayerEntity)entity).networkHandler.sendPacket(new EntityPassengersSetS2CPacket(entity));
         }
     }
 
