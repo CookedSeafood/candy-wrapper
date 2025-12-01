@@ -1,6 +1,6 @@
 {
     "required": true,
-    "package": "net.hederamc.candywrapper.mixin.client",
+    "package": "net.hederamc.cw.mixin.client",
     "compatibilityLevel": "JAVA_21",
     "client": [],
     "injectors": {
