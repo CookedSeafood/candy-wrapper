@@ -1,8 +1,6 @@
 package net.hederamc.cw;
 
-import net.hederamc.cw.command.CandyWrapperCommand;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,7 +14,7 @@ public class CandyWrapper implements ModInitializer {
 
     public static final byte VERSION_MAJOR = 2;
     public static final byte VERSION_MINOR = 0;
-    public static final byte VERSION_PATCH = 0;
+    public static final byte VERSION_PATCH = 1;
 
     @Override
     public void onInitialize() {
@@ -24,6 +22,5 @@ public class CandyWrapper implements ModInitializer {
         // However, some things (like resources) may still be uninitialized.
         // Proceed with mild caution.
 
-        CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> CandyWrapperCommand.register(dispatcher, registryAccess));
     }
 }
