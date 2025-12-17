@@ -14,13 +14,12 @@ public class CandyWrapper implements ModInitializer {
 
     public static final byte VERSION_MAJOR = 2;
     public static final byte VERSION_MINOR = 0;
-    public static final byte VERSION_PATCH = 2;
+    public static final byte VERSION_PATCH = 3;
 
     @Override
     public void onInitialize() {
         // This code runs as soon as Minecraft is in a mod-load-ready state.
         // However, some things (like resources) may still be uninitialized.
         // Proceed with mild caution.
-
     }
 }

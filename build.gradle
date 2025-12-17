@@ -28,7 +28,7 @@ loom {
         }
     }
 
-    accessWidenerPath = file("src/main/resources/candy-wrapper.accesswidener")
+    accessWidenerPath = file("src/main/resources/candy-wrapper.classtweaker")
 }
 
 dependencies {

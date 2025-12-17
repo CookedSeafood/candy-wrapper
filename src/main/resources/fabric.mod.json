@@ -35,56 +35,12 @@
         }
     ],
     "depends": {
-        "fabricloader": ">=0.18.1",
+        "fabricloader": ">=0.18.3",
         "minecraft": "~1.21.5",
         "java": ">=21",
         "fabric-api": "*"
     },
-    "suggests": {
-        "another-mod": "*"
-    },
-    "custom": {
-        "loom:injected_interfaces": {
-            "net/minecraft/class_269": [
-                "net/hederamc/cw/api/ScoreboardApi"
-            ],
-            "net/minecraft/class_1259\u0024class_1260": [
-                "net/hederamc/cw/api/BossBarColorApi"
-            ],
-            "net/minecraft/class_1297": [
-                "net/hederamc/cw/api/EntityApi"
-            ],
-            "net/minecraft/class_1309": [
-                "net/hederamc/cw/api/LivingEntityApi"
-            ],
-            "net/minecraft/class_1657": [
-                "net/hederamc/cw/api/PlayerEntityApi"
-            ],
-            "net/minecraft/class_1792": [
-                "net/hederamc/cw/api/ItemApi"
-            ],
-            "net/minecraft/class_1799": [
-                "net/hederamc/cw/api/ItemStackApi"
-            ],
-            "net/minecraft/class_2487": [
-                "net/hederamc/cw/api/NbtCompoundApi"
-            ],
-            "net/minecraft/class_3004": [
-                "net/hederamc/cw/api/BossBarManagerApi"
-            ],
-            "net/minecraft/class_3218": [
-                "net/hederamc/cw/api/ServerWorldApi"
-            ],
-            "net/minecraft/class_5250": [
-                "net/hederamc/cw/api/MutableTextApi"
-            ],
-            "net/minecraft/class_9279": [
-                "net/hederamc/cw/api/NbtComponentApi"
-            ],
-            "net/minecraft/class_9304": [
-                "net/hederamc/cw/api/ItemEnchantmentsComponentApi"
-            ]
-        }
-    },
-    "accessWidener": "candy-wrapper.accesswidener"
+    "suggests": {},
+    "custom": {},
+    "accessWidener": "candy-wrapper.classtweaker"
 }
