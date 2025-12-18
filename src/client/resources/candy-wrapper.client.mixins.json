@@ -1,6 +1,6 @@
 {
     "required": true,
-    "package": "net.hederamc.cw.mixin.client",
+    "package": "net.hederamc.cw.client.mixin",
     "compatibilityLevel": "JAVA_21",
     "client": [],
     "injectors": {
