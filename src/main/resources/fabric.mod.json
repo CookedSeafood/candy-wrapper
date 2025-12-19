@@ -14,7 +14,8 @@
     ],
     "contact": {
         "homepage": "https://modrinth.com/mod/candy-wrapper",
-        "sources": "https://github.com/CookedSeafood/candy-wrapper"
+        "sources": "https://github.com/CookedSeafood/candy-wrapper",
+        "issues": "https://github.com/CookedSeafood/candy-wrapper/issues"
     },
     "license": "GNU-GPL-3.0",
     "icon": "assets/candy-wrapper/icon.png",
@@ -41,6 +42,12 @@
         "fabric-api": "*"
     },
     "suggests": {},
-    "custom": {},
+    "custom": {
+        "modmenu": {
+            "badges": [
+                "library"
+            ]
+        }
+    },
     "accessWidener": "candy-wrapper.classtweaker"
 }
