@@ -12,21 +12,17 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.scoreboard.ScoreHolder;
+import net.minecraft.util.math.MathHelper;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin implements LivingEntityApi {
-    @Shadow
-    public boolean dead;
-    @Shadow
-    public float bodyYaw;
-    @Shadow
-    public float lastBodyYaw;
-    @Shadow
-    public float headYaw;
-    @Shadow
-    public float lastHeadYaw;
+    @Shadow private boolean dead;
+    @Shadow private float lastBodyYaw;
+    @Shadow private float lastHeadYaw;
+    @Shadow private float bodyYaw;
+    @Shadow private float headYaw;
 
     @Override
     public List<Entry<RegistryEntry<Enchantment>>> getEnchantments(RegistryKey<Enchantment> key) {
@@ -61,13 +57,13 @@ public abstract class LivingEntityMixin implements LivingEntityApi {
     }
 
     @Override
-    public float getBodyYawDelta() {
-        return this.bodyYaw - this.lastBodyYaw;
+    public float getLerpedBodyYaw(float tickProgress) {
+        return MathHelper.lerp(tickProgress, this.lastBodyYaw, this.bodyYaw);
     }
 
     @Override
-    public float getHeadYawDelta() {
-        return this.headYaw - this.lastHeadYaw;
+    public float getLerpedHeadYaw(float tickProgress) {
+        return MathHelper.lerp(tickProgress, this.lastHeadYaw, this.headYaw);
     }
 
     @Override

@@ -5,6 +5,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.network.packet.s2c.play.EntityPassengersSetS2CPacket;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.hederamc.cw.api.EntityApi;
 import org.spongepowered.asm.mixin.Mixin;
@@ -16,22 +17,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(Entity.class)
 public abstract class EntityMixin implements EntityApi{
-    @Shadow
-    public double lastX;
-    @Shadow
-    public double lastY;
-    @Shadow
-    public double lastZ;
-    @Shadow
-    private Vec3d pos;
-    @Shadow
-    private float yaw;
-    @Shadow
-    private float pitch;
-    @Shadow
-    public float lastYaw;
-    @Shadow
-    public float lastPitch;
+    @Shadow private double lastX;
+    @Shadow private double lastY;
+    @Shadow private double lastZ;
+    @Shadow private Vec3d pos;
 
     @Redirect(
         method = "startRiding(Lnet/minecraft/entity/Entity;Z)Z",
@@ -79,33 +68,18 @@ public abstract class EntityMixin implements EntityApi{
     }
 
     @Override
-    public double getXDelta() {
-        return this.pos.x - this.lastX;
+    public double getLerpedX(float tickProgress) {
+        return MathHelper.lerp(tickProgress, this.lastX, this.pos.x);
     }
 
     @Override
-    public double getYDelta() {
-        return this.pos.y - this.lastY;
+    public double getLerpedY(float tickProgress) {
+        return MathHelper.lerp(tickProgress, this.lastY, this.pos.y);
     }
 
     @Override
-    public double getZDelta() {
-        return this.pos.z - this.lastZ;
-    }
-
-    @Override
-    public Vec3d getPosDelta() {
-        return this.pos.subtract(this.lastX, this.lastY, this.lastZ);
-    }
-
-    @Override
-    public float getYawDelta() {
-        return this.yaw - this.lastYaw;
-    }
-
-    @Override
-    public float getPitchDelta() {
-        return this.pitch - this.lastPitch;
+    public double getLerpedZ(float tickProgress) {
+        return MathHelper.lerp(tickProgress, this.lastZ, this.pos.z);
     }
 
     @Override

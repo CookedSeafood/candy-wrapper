@@ -1,30 +1,16 @@
 package net.hederamc.cw.api;
 
-import net.minecraft.util.math.Vec3d;
-
 public interface EntityApi {
-    default double getXDelta() {
+    default double getLerpedX(float tickProgress) {
         return 0.0;
     }
 
-    default double getYDelta() {
+    default double getLerpedY(float tickProgress) {
         return 0.0;
     }
 
-    default double getZDelta() {
+    default double getLerpedZ(float tickProgress) {
         return 0.0;
-    }
-
-    default Vec3d getPosDelta() {
-        return null;
-    }
-
-    default float getYawDelta() {
-        return 0.0f;
-    }
-
-    default float getPitchDelta() {
-        return 0.0f;
     }
 
     default boolean hasCommandTag(String commandTag) {

@@ -19,11 +19,11 @@ public interface LivingEntityApi {
     default void setDead(boolean dead) {
     }
 
-    default float getBodyYawDelta() {
+    default float getLerpedBodyYaw(float tickProgress) {
         return 0.0f;
     }
 
-    default float getHeadYawDelta() {
+    default float getLerpedHeadYaw(float tickProgress) {
         return 0.0f;
     }
 

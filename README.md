@@ -25,17 +25,11 @@ public class Scoreboard {
 
 ```java
 public abstract class Entity {
-    public double getXDelta() {}
+    public double getLerpedX(float tickProgress) {}
 
-    public double getYDelta() {}
+    public double getLerpedY(float tickProgress) {}
 
-    public double getZDelta() {}
-
-    public double getPosDelta() {}
-
-    public double getYawDelta() {}
-
-    public double getPitchDelta() {}
+    public double getLerpedZ(float tickProgress) {}
 
     // A shortcut of .getCommandTags().contains(commandTag)
     public boolean hasCommandTag(String commandTag) {}
@@ -112,9 +106,9 @@ public abstract class LivingEntity {
 
     public void setDead(boolean dead) {}
 
-    public float getBodyYawDelta() {}
+    public float getLerpedBodyYaw(float tickProgress) {}
 
-    public float getHeadYawDelta() {}
+    public float getLerpedHeadYaw(float tickProgress) {}
 
     public ScoreHolder getScoreHolder() {}
 }
