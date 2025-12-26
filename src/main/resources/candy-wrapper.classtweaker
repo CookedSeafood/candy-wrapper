@@ -6,28 +6,28 @@ transitive-accessible method net/minecraft/nbt/NbtList <init> (Ljava/util/List;)
 
 transitive-accessible method net/minecraft/text/MutableText <init> (Lnet/minecraft/text/TextContent;Ljava/util/List;Lnet/minecraft/text/Style;)V
 
-transitive-inject-interface net/minecraft/component/type/ItemEnchantmentsComponent net/hederamc/cw/api/ItemEnchantmentsComponentApi
+transitive-inject-interface net/minecraft/component/type/ItemEnchantmentsComponent net/hederamc/sugar/api/ItemEnchantmentsComponentApi
 
-transitive-inject-interface net/minecraft/component/type/NbtComponent              net/hederamc/cw/api/NbtComponentApi
+transitive-inject-interface net/minecraft/component/type/NbtComponent              net/hederamc/sugar/api/NbtComponentApi
 
-transitive-inject-interface net/minecraft/entity/Entity                            net/hederamc/cw/api/EntityApi
+transitive-inject-interface net/minecraft/entity/Entity                            net/hederamc/sugar/api/EntityApi
 
-transitive-inject-interface net/minecraft/entity/LivingEntity                      net/hederamc/cw/api/LivingEntityApi
+transitive-inject-interface net/minecraft/entity/LivingEntity                      net/hederamc/sugar/api/LivingEntityApi
 
-transitive-inject-interface net/minecraft/entity/boss/BossBar$Color                net/hederamc/cw/api/BossBarColorApi
+transitive-inject-interface net/minecraft/entity/boss/BossBar$Color                net/hederamc/sugar/api/BossBarColorApi
 
-transitive-inject-interface net/minecraft/entity/boss/BossBarManager               net/hederamc/cw/api/BossBarManagerApi
+transitive-inject-interface net/minecraft/entity/boss/BossBarManager               net/hederamc/sugar/api/BossBarManagerApi
 
-transitive-inject-interface net/minecraft/entity/player/PlayerEntity               net/hederamc/cw/api/PlayerEntityApi
+transitive-inject-interface net/minecraft/entity/player/PlayerEntity               net/hederamc/sugar/api/PlayerEntityApi
 
-transitive-inject-interface net/minecraft/item/Item                                net/hederamc/cw/api/ItemApi
+transitive-inject-interface net/minecraft/item/Item                                net/hederamc/sugar/api/ItemApi
 
-transitive-inject-interface net/minecraft/item/ItemStack                           net/hederamc/cw/api/ItemStackApi
+transitive-inject-interface net/minecraft/item/ItemStack                           net/hederamc/sugar/api/ItemStackApi
 
-transitive-inject-interface net/minecraft/nbt/NbtCompound                          net/hederamc/cw/api/NbtCompoundApi
+transitive-inject-interface net/minecraft/nbt/NbtCompound                          net/hederamc/sugar/api/NbtCompoundApi
 
-transitive-inject-interface net/minecraft/scoreboard/Scoreboard                    net/hederamc/cw/api/ScoreboardApi
+transitive-inject-interface net/minecraft/scoreboard/Scoreboard                    net/hederamc/sugar/api/ScoreboardApi
 
-transitive-inject-interface net/minecraft/server/world/ServerWorld                 net/hederamc/cw/api/ServerWorldApi
+transitive-inject-interface net/minecraft/server/world/ServerWorld                 net/hederamc/sugar/api/ServerWorldApi
 
-transitive-inject-interface net/minecraft/text/MutableText                         net/hederamc/cw/api/MutableTextApi
+transitive-inject-interface net/minecraft/text/MutableText                         net/hederamc/sugar/api/MutableTextApi
